@@ -18,5 +18,12 @@ IGNOER_CHECK_LOGIN_URL = [
 分页配置
 '''
 PAGE_SIZE = 50
-
 PAGE_DISPLAY = 10
+
+'''
+搜索变量
+'''
+STATUS_MAPPING = {
+    "1": "正常",
+    "0": "已删除"
+}
