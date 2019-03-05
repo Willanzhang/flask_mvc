@@ -18,8 +18,10 @@ db = SQLAlchemy()
 app = Application(__name__, template_folder=os.getcwd() + "/webs/templates/", root_path=os.getcwd())
 manager = Manager(app)
 
-repr('函数模板')
 
+'''
+函数模板
+'''
 app.add_template_global(UrlManager.buildStaticUrl, 'buildStaticUrl')
 app.add_template_global(UrlManager.buildUrl, 'buildUrl')
 
