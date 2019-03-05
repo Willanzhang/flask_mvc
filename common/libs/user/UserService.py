@@ -1,6 +1,6 @@
 # coding = utf-8
-import hashlib, base64
-
+import hashlib
+import base64
 
 class UserService(object):
 
@@ -14,6 +14,6 @@ class UserService(object):
     @staticmethod
     def geneAuthCode(user_info):
         m = hashlib.md5()
-        str = "%s-%s-%s-%s" % ( user_info.uid, user_info.login_name, user_info.login_pwd, user_info.login_salt)
+        str = "%s-%s-%s-%s" % (user_info.uid, user_info.login_name, user_info.login_pwd, user_info.login_salt)
         m.update(str.encode('utf-8'))
         return m.hexdigest()

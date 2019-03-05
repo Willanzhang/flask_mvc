@@ -2,15 +2,27 @@
 from application import app
 from flask import request, redirect
 from common.models.user import User
-from common.libs.user import UserService
+from common.libs.user.UserService import UserService
 from common.libs.UrlManager import UrlManager
+import re
 
 @app.before_request
 def before_request():
+    igore_urls = app.config['IGNORE_URLS']
+    ignore_check_login_urls = app.config['IGNOER_CHECK_LOGIN_URL']
     path = request.path
+
+    pattern = re.compile('%s' % "|".join(ignore_check_login_urls))
+    if pattern.match(path):
+        return
+
+    # 判断是否登录
     user_info_login = check_login()
 
-    # 登录页面是不需要验证登录的明天弄
+    pattern = re.compile('%s' % "|".join(igore_urls))
+    if pattern.match(path):
+        return
+    # 登录页面是不需要验证登录的
     if not user_info_login:
         return redirect(UrlManager.buildUrl('/user/login'))
     return
@@ -28,10 +40,10 @@ def check_login():
         return False
 
     auth_info = auth_cookie.split("#")
-    if len(auth_info) !=2:
+    if len(auth_info) != 2:
         return False
     try:
-        user_info = User.query .filter_by(uid=auth_info[0]).first()
+        user_info = User.query .filter_by(uid=auth_info[1]).first()
     except Exception:
         return False
 

@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
-from flask import Blueprint, render_template, request, jsonify, make_response, json
+from flask import Blueprint, render_template, request, jsonify, make_response, json, redirect
 from application import app
 from common.models.user import User
 from common.libs.user.UserService import UserService
+from common.libs.UrlManager import UrlManager
 # from sqlalchemy import text
 # from application import app
 
@@ -46,10 +47,18 @@ def login():
     return response
 
 
-@route_user.route( "/edit" )
+@route_user.route("/edit")
 def edit():
     return render_template("user/edit.html")
+
 
 @route_user.route( "/reset-pwd" )
 def resetPwd():
     return render_template("user/reset_pwd.html")
+
+
+@route_user.route("/logout")
+def logout():
+    response = make_response(redirect(UrlManager.buildUrl('/user/login')))
+    response.delete_cookie(app.config['AUTH_COOKIE_NAME'])
+    return response
