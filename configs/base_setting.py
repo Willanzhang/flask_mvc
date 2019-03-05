@@ -13,3 +13,10 @@ IGNOER_CHECK_LOGIN_URL = [
     "^/static",
     "^/favicon.ico"
 ]
+
+'''
+分页配置
+'''
+PAGE_SIZE = 50
+
+PAGE_DISPLAY = 10

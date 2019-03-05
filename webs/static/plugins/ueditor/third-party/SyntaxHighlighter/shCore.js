@@ -734,7 +734,7 @@ if (typeof(SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function()
             /** Enables use of <SCRIPT type="syntaxhighlighter" /> tags. */
             useScriptTags : true,
 
-            /** Blogger mode flag. */
+            /** Bops_render mode flag. */
             bloggerMode : false,
 
             stripBrs : false,

@@ -1,6 +1,5 @@
 # coding = utf-8
-import hashlib
-import base64
+import hashlib,base64, random, string
 
 class UserService(object):
 
@@ -17,3 +16,9 @@ class UserService(object):
         str = "%s-%s-%s-%s" % (user_info.uid, user_info.login_name, user_info.login_pwd, user_info.login_salt)
         m.update(str.encode('utf-8'))
         return m.hexdigest()
+
+    @staticmethod
+    def geneSalt(length = 16):
+        # string 的 as 字符串 加上str 的数字
+        keylist = [random.choice((string.ascii_letters + string.digits)) for i in range(length)]
+        return ("".join(keylist))

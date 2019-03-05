@@ -2,16 +2,16 @@
     <div class="col-lg-12">
         <div class="tab_title">
             <ul class="nav nav-pills">
-                <li {% if current == "index" %} class="current" {% endif %}>
+                <li {% if current == "index" %} class="current" {% ops_render %}>
                     <a href="{{ buildUrl('/stat/index') }}">财务统计</a>
                 </li>
-                <li {% if current == "food" %} class="current" {% endif %}>
+                <li {% if current == "food" %} class="current" {% ops_render %}>
                     <a href="{{ buildUrl('/stat/food') }}">售卖统计</a>
                 </li>
-                <li {% if current == "member" %} class="current" {% endif %}>
+                <li {% if current == "member" %} class="current" {% ops_render %}>
                     <a href="{{ buildUrl('/stat/member') }}">会员消费统计</a>
                 </li>
-                <li {% if current == "share" %} class="current" {% endif %}>
+                <li {% if current == "share" %} class="current" {% ops_render %}>
                     <a href="{{ buildUrl('/stat/share') }}">分享统计</a>
                 </li>
             </ul>

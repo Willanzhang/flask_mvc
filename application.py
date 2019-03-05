@@ -24,4 +24,3 @@ manager = Manager(app)
 '''
 app.add_template_global(UrlManager.buildStaticUrl, 'buildStaticUrl')
 app.add_template_global(UrlManager.buildUrl, 'buildUrl')
-
