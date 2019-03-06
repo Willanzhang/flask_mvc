@@ -1,10 +1,11 @@
 //login.js
 //获取应用实例
-var app = getApp();
+let app = getApp();
 Page({
   data: {
     remind: '加载中',
     angle: 0,
+    reFlag: true,
     userInfo: {}
   },
   goToIndex:function(){
@@ -16,19 +17,21 @@ Page({
     wx.setNavigationBarTitle({
       title: app.globalData.shopName
     })
+    // this.login();
+    this.checkLogin()
   },
   onShow:function(){
 
   },
   onReady: function(){
-    var that = this;
+    let that = this;
     setTimeout(function(){
       that.setData({
         remind: ''
       });
     }, 1000);
     wx.onAccelerometerChange(function(res) {
-      var angle = -(res.x*30).toFixed(1);
+      let angle = -(res.x*30).toFixed(1);
       if(angle>14){ angle=14; }
       else if(angle<-14){ angle=-14; }
       if(that.data.angle !== angle){
@@ -37,5 +40,73 @@ Page({
         });
       }
     });
+  },
+  checkLogin: function() {
+    let that = this
+    wx.login({
+      success(res) {
+        if (res.code) {
+          wx.request({
+            url: app.buildUrl('/member/check-reg'),
+            method: "POST",
+            header: app.getRequestHeader(),
+            data: {code: res.code},
+            success: function(res) {
+              if (res.data.code === 200) {
+                that.setData({
+                  reFlag: true
+                },()=> {
+                  app.setCache("token", res.data.data.token)
+                  that.goToIndex()
+                })
+              } else {
+                that.setData({
+                  reFlag: false
+                })
+              }
+            }
+          })
+        } else {
+          app.alert({'content': '登录失败，请重新点击~~'})
+        }
+      }
+    })
+  },
+  login:function (e) {
+    let that = this
+    if(!e.detail.userInfo) {
+      app.alert({'content': '登录失败，请重新点击~~'});
+      return;
+    }
+    let data = e.detail.userInfo;
+    wx.login({
+      success(res) {
+        app.console(res)
+        if (res.code) {
+          // 发起网络请求
+          data['code'] = res.code
+          wx.request({
+            url: app.buildUrl('/member/login'),
+            method: "POST",
+            header: app.getRequestHeader(),
+            data: data,
+            success: function(res) {
+              if (res.data.code !== 200) {
+                app.alert({'content': '登录失败，请重新点击~~'})
+                return;
+              } else {
+                wx.setStorageSync({
+                  token: res.data.data.token
+                })
+                app.setCache("token", res.data.data.token)
+                that.goToIndex()
+              }
+            }
+          })
+        } else {
+          app.alert({'content': '登录失败，请重新点击~~'})
+        }
+      }
+    })
   }
 });

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-
+import datetime
 class UrlManager(object):
     def __init__(self):
         pass
@@ -11,6 +11,6 @@ class UrlManager(object):
 
     @staticmethod
     def buildStaticUrl(path):
-        ver = "%s"%( 22222222 )
+        ver = "%s" % (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
         path = "/static" + path + "?ver=" + ver
-        return UrlManager.buildUrl( path )
+        return UrlManager.buildUrl(path)
