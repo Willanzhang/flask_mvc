@@ -64,6 +64,10 @@ Page({
         wx.reLaunch({
             url: "/pages/cart/index"
         });
+        
+        console.log(x)
+        var x= 1
+
     },
     toAddShopCar: function () {
         this.setData({

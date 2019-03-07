@@ -39,7 +39,6 @@ var member_set_ops = {
                             window.location.href = common_ops.buildUrl("/member/index");
                         }
                     }
-
                     common_ops.alert( res.msg,callback);
                 }
             });

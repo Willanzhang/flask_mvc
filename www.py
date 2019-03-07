@@ -1,9 +1,5 @@
 # 所有路由都在这里注入
-from application import app
-
-
-
-
+# from application import app
 '''
 统计拦截器
 '''
