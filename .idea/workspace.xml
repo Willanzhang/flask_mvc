@@ -3,17 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c7af30ca-9b57-4707-b5e5-63ff8e49e256" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/models/member/member.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/member/member.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mina/pages/food/info.js" beforeDir="false" afterPath="$PROJECT_DIR$/mina/pages/food/info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mina/utils/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/mina/utils/util.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webs/controllers/member/Member.py" beforeDir="false" afterPath="$PROJECT_DIR$/webs/controllers/member/Member.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webs/static/js/member/set.js" beforeDir="false" afterPath="$PROJECT_DIR$/webs/static/js/member/set.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webs/templates/member/comment.html" beforeDir="false" afterPath="$PROJECT_DIR$/webs/templates/member/comment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webs/templates/member/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/webs/templates/member/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webs/templates/member/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/webs/templates/member/info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webs/templates/member/set.html" beforeDir="false" afterPath="$PROJECT_DIR$/webs/templates/member/set.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www.py" beforeDir="false" afterPath="$PROJECT_DIR$/www.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +11,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.22276029">
+    <splitter split-orientation="horizontal" split-proportion="0.6513317">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -55,8 +44,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/webs/controllers/member/Member.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="413">
-                  <caret line="143" column="30" lean-forward="true" selection-start-line="143" selection-start-column="30" selection-end-line="143" selection-end-column="30" />
+                <state relative-caret-position="278">
+                  <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
                   <folding>
                     <element signature="e#24#70#0" expanded="true" />
                   </folding>
@@ -67,7 +56,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/webs/static/js/member/set.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="675">
+                <state relative-caret-position="918">
                   <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
                 </state>
               </provider>
@@ -177,8 +166,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/webs/templates/member/info.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="216">
-                  <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+                <state relative-caret-position="432">
+                  <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
                 </state>
               </provider>
             </entry>
@@ -297,8 +286,8 @@
         <option value="$PROJECT_DIR$/webs/templates/member/set.html" />
         <option value="$PROJECT_DIR$/webs/static/js/member/set.js" />
         <option value="$PROJECT_DIR$/webs/templates/member/index.html" />
-        <option value="$PROJECT_DIR$/webs/controllers/member/Member.py" />
         <option value="$PROJECT_DIR$/webs/templates/member/info.html" />
+        <option value="$PROJECT_DIR$/webs/controllers/member/Member.py" />
       </list>
     </option>
   </component>
@@ -480,18 +469,17 @@
       <workItem from="1551668841643" duration="11339000" />
       <workItem from="1551685290028" duration="9023000" />
       <workItem from="1551695414465" duration="57397000" />
-      <workItem from="1551878057024" duration="13103000" />
+      <workItem from="1551878057024" duration="15790000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98817000" />
+    <option name="totallyTimeSpent" value="101504000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11940298" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11940298" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -505,7 +493,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3290993" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.18980478" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.18980478" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -778,13 +766,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webs/templates/common/pagenation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webs/templates/member/comment.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-220">
@@ -845,13 +826,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webs/static/js/member/set.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webs/templates/member/set.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -876,16 +850,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webs/controllers/member/Member.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="143" column="30" lean-forward="true" selection-start-line="143" selection-start-column="30" selection-end-line="143" selection-end-column="30" />
-          <folding>
-            <element signature="e#24#70#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webs/templates/member/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="394">
@@ -893,10 +857,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/webs/templates/common/pagenation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/webs/templates/member/info.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+        <state relative-caret-position="432">
+          <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webs/static/js/member/set.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webs/controllers/member/Member.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+          <folding>
+            <element signature="e#24#70#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -37,10 +37,15 @@ def login():
         resp['code'] = -1
         resp['msg'] = '请输入正确的用户名和密码 -1~~'
         return jsonify(resp)
+    # 已经注销
+    if user_info.status != 1:
+        resp['code'] = -1
+        resp['msg'] = '请输入正确的用户名和密码 -2~~'
+        return jsonify(resp)
 
     if user_info.login_pwd != UserService.genePwd(login_pwd, user_info.login_salt):
         resp['code'] = -1
-        resp['msg'] = '请输入正确的用户名和密码 -2~~'
+        resp['msg'] = '请输入正确的用户名和密码 -3~~'
         return jsonify(resp)
 
     # 保存cookie   cookie同时也要加密
