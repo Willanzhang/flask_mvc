@@ -1,7 +1,668 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c7af30ca-9b57-4707-b5e5-63ff8e49e256" name="Default Changelist" comment="" />
+    <list default="true" id="c7af30ca-9b57-4707-b5e5-63ff8e49e256" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/libs/Helper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/libs/UrlManager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/libs/member/MemberService.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/libs/user/UserService.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/libs/user/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/models/member/member.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/models/member/oauth_member_bind.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/models/user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/PPT对应文档/Linux安装相关文档.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/PPT对应文档/Linux操作准备.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/PPT对应文档/Pycharm 注册码.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/PPT对应文档/Python环境安装 + Linux共享目录.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/PPT对应文档/flask 结合数据库.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/PPT对应文档/windows下面解决pip安装问题.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/PPT对应文档/~$库Mysql.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/PPT对应文档/~$管理员模块功能.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/PPT对应文档/【划重点】Linux共享目录操作明细.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/PPT对应文档/云主机部署文档.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/PPT对应文档/可视化编辑器ueditor.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/PPT对应文档/后台管理员模块功能.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/PPT对应文档/小程序说明手册.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/PPT对应文档/数据库Mysql.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/PPT对应文档/无刷新上传.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/PPT对应文档/错误处理集合.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/PPT对应文档/防火墙的操作.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/数据库文件/food.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/数据库文件/后台初始账户.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/.idea/markdown-navigator/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/.idea/mina.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/app.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/images/food.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/images/more/confirm-word1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/images/more/loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/images/more/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/images/more/title8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/images/more/wave.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/images/nav/cart-off.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/images/nav/cart-on.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/images/nav/home-off.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/images/nav/home-on.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/images/nav/my-off.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/images/nav/my-on.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/images/nav/order-off.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/images/nav/order-on.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/images/no-order.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/images/order/icon-address.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/images/order/icon-ddfh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/images/order/icon-ddfk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/images/order/icon-ddgb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/images/order/icon-ddsh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/images/order/icon-jycg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/images/order/icon-wuliu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/images/qd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/images/search-pic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/cart/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/cart/index.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/cart/index.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/cart/index.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/food/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/food/index.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/food/index.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/food/index.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/food/info.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/food/info.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/food/info.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/food/info.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/index/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/index/index.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/index/index.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/index/index.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/logs/logs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/logs/logs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/logs/logs.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/logs/logs.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/my/addressList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/my/addressList.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/my/addressList.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/my/addressList.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/my/addressSet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/my/addressSet.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/my/addressSet.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/my/addressSet.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/my/comment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/my/comment.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/my/comment.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/my/comment.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/my/commentList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/my/commentList.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/my/commentList.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/my/commentList.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/my/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/my/index.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/my/index.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/my/index.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/my/order_info.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/my/order_info.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/my/order_info.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/my/order_info.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/my/order_list.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/my/order_list.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/my/order_list.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/my/order_list.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/order/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/order/index.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/order/index.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/pages/order/index.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/project.config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/utils/city.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/utils/common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/utils/env.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/utils/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/00.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/01.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/02.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/03.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/04.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/05.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/06.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/07.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/08.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/09.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/10.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/100.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/101.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/102.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/103.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/104.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/105.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/106.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/107.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/108.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/109.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/11.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/110.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/111.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/112.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/113.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/114.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/115.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/116.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/117.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/118.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/119.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/12.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/120.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/121.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/122.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/123.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/124.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/125.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/126.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/127.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/128.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/129.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/13.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/130.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/131.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/132.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/133.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/134.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/14.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/15.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/16.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/17.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/18.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/19.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/20.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/21.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/22.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/23.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/24.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/25.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/26.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/27.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/28.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/29.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/30.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/31.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/32.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/33.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/34.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/35.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/36.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/37.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/38.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/39.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/40.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/41.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/42.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/43.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/44.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/45.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/46.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/47.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/48.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/49.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/50.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/51.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/52.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/53.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/54.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/55.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/56.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/57.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/58.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/59.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/60.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/61.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/62.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/63.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/64.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/65.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/66.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/67.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/68.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/69.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/70.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/71.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/72.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/73.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/74.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/75.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/76.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/77.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/78.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/79.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/80.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/81.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/82.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/83.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/84.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/85.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/86.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/87.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/88.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/89.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/90.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/91.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/92.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/93.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/94.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/95.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/96.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/97.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/98.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/emojis/99.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/html2json.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/htmlparser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/showdown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/wxDiscode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/wxParse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/wxParse.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mina/wxParse/wxParse.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/controllers/account/Account.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/controllers/account/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/controllers/api/Member.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/controllers/api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/controllers/finance/Finance.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/controllers/finance/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/controllers/food/Food.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/controllers/food/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/controllers/member/Member.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/controllers/member/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/controllers/stat/Stat.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/controllers/stat/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/controllers/static.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/controllers/user/User.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/controllers/user/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/interceptors/AuthInterceptor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/bootstrap/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/bootstrap/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/font-awesome/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/font-awesome/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/font-awesome/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/font-awesome/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/font-awesome/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/font-awesome/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/font-awesome/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/images/common/avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/images/common/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/images/common/mini_qrcode.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/images/common/qrcode.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/js/account/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/js/account/set.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/js/chart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/js/common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/js/finance/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/js/finance/pay_info.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/js/food/cat.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/js/food/cat_set.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/js/food/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/js/food/set.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/js/index/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/js/member/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/js/member/set.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/js/stat/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/js/stat/member.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/js/stat/product.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/js/stat/share.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/js/user/edit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/js/user/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/js/user/reset_pwd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/datetimepicker/jquery.datetimepicker.full.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/datetimepicker/jquery.datetimepicker.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/highcharts/highcharts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/jquery-2.1.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/layer/layer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/layer/mobile/layer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/layer/mobile/need/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/layer/skin/default/icon-ext.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/layer/skin/default/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/layer/skin/default/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/layer/skin/default/loading-0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/layer/skin/default/loading-1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/layer/skin/default/loading-2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/moment.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/raty/img/cancel-off.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/raty/img/cancel-on.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/raty/img/star-half.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/raty/img/star-off.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/raty/img/star-on.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/raty/jquery.raty.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/scroll/jquery.mCustomScrollbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/scroll/jquery.mousewheel.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/scroll/scrollbar.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/select2/pinyin.core.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/select2/select2.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/select2/select2.pinyin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/select2/zh-CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/tagsinput/jquery.tagsinput.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/tagsinput/jquery.tagsinput.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/anchor/anchor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/attachment/attachment.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/attachment/attachment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/attachment/attachment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/attachment/fileTypeImages/icon_chm.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/attachment/fileTypeImages/icon_default.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/attachment/fileTypeImages/icon_doc.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/attachment/fileTypeImages/icon_exe.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/attachment/fileTypeImages/icon_jpg.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/attachment/fileTypeImages/icon_mp3.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/attachment/fileTypeImages/icon_mv.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/attachment/fileTypeImages/icon_pdf.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/attachment/fileTypeImages/icon_ppt.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/attachment/fileTypeImages/icon_psd.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/attachment/fileTypeImages/icon_rar.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/attachment/fileTypeImages/icon_txt.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/attachment/fileTypeImages/icon_xls.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/attachment/images/alignicon.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/attachment/images/alignicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/attachment/images/bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/attachment/images/file-icons.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/attachment/images/file-icons.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/attachment/images/icons.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/attachment/images/icons.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/attachment/images/image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/attachment/images/progress.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/attachment/images/success.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/attachment/images/success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/background/background.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/background/background.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/background/background.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/background/images/bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/background/images/success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/charts/chart.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/charts/charts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/charts/charts.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/charts/charts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/charts/images/charts0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/charts/images/charts1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/charts/images/charts2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/charts/images/charts3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/charts/images/charts4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/charts/images/charts5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/emotion/emotion.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/emotion/emotion.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/emotion/emotion.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/emotion/images/0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/emotion/images/bface.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/emotion/images/cface.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/emotion/images/fface.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/emotion/images/jxface2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/emotion/images/neweditor-tab-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/emotion/images/tface.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/emotion/images/wface.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/emotion/images/yface.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/gmap/gmap.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/help/help.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/help/help.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/help/help.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/image/image.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/image/image.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/image/image.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/image/images/alignicon.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/image/images/bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/image/images/icons.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/image/images/icons.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/image/images/image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/image/images/progress.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/image/images/success.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/image/images/success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/insertframe/insertframe.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/internal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/link/link.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/map/map.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/map/show.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/music/music.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/music/music.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/music/music.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/preview/preview.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/scrawl/images/addimg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/scrawl/images/brush.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/scrawl/images/delimg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/scrawl/images/delimgH.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/scrawl/images/empty.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/scrawl/images/emptyH.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/scrawl/images/eraser.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/scrawl/images/redo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/scrawl/images/redoH.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/scrawl/images/scale.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/scrawl/images/scaleH.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/scrawl/images/size.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/scrawl/images/undo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/scrawl/images/undoH.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/scrawl/scrawl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/scrawl/scrawl.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/scrawl/scrawl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/searchreplace/searchreplace.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/searchreplace/searchreplace.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/snapscreen/snapscreen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/spechars/spechars.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/spechars/spechars.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/table/dragicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/table/edittable.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/table/edittable.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/table/edittable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/table/edittd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/table/edittip.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/template/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/template/images/bg.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/template/images/pre0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/template/images/pre1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/template/images/pre2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/template/images/pre3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/template/images/pre4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/template/template.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/template/template.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/template/template.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/video/images/bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/video/images/center_focus.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/video/images/file-icons.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/video/images/file-icons.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/video/images/icons.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/video/images/icons.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/video/images/image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/video/images/left_focus.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/video/images/none_focus.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/video/images/progress.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/video/images/right_focus.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/video/images/success.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/video/images/success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/video/video.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/video/video.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/video/video.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/webapp/webapp.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/wordimage/fClipboard_ueditor.swf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/wordimage/imageUploader.swf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/wordimage/tangram.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/wordimage/wordimage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/dialogs/wordimage/wordimage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/lang/en/en.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/lang/en/images/addimage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/lang/en/images/alldeletebtnhoverskin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/lang/en/images/alldeletebtnupskin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/lang/en/images/background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/lang/en/images/button.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/lang/en/images/copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/lang/en/images/deletedisable.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/lang/en/images/deleteenable.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/lang/en/images/listbackground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/lang/en/images/localimage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/lang/en/images/music.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/lang/en/images/rotateleftdisable.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/lang/en/images/rotateleftenable.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/lang/en/images/rotaterightdisable.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/lang/en/images/rotaterightenable.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/lang/en/images/upload.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/lang/zh-cn/images/copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/lang/zh-cn/images/localimage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/lang/zh-cn/images/music.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/lang/zh-cn/images/upload.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/lang/zh-cn/zh-cn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/php/Uploader.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/php/action_crawler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/php/action_list.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/php/action_upload.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/php/config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/php/controller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/css/ueditor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/css/ueditor.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/dialogbase.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/anchor.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/arrow_down.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/arrow_up.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/button-bg.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/cancelbutton.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/charts.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/cursor_h.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/cursor_h.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/cursor_v.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/cursor_v.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/dialog-title-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/filescan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/highlighted.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/icons-all.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/icons.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/icons.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/loaderror.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/lock.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/neweditor-tab-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/pagebreak.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/scale.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/sortable.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/spacer.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/sparator_v.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/table-cell-align.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/tangram-colorpicker.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/toolbar_bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/unhighlighted.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/upload.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/videologo.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/word.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/default/images/wordpaste.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/themes/iframe.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/SyntaxHighlighter/shCore.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/codemirror/codemirror.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/codemirror/codemirror.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/adapters/mootools-adapter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/adapters/mootools-adapter.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/adapters/prototype-adapter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/adapters/prototype-adapter.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/adapters/standalone-framework.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/adapters/standalone-framework.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/highcharts-more.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/highcharts-more.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/highcharts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/highcharts.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/modules/annotations.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/modules/annotations.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/modules/canvas-tools.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/modules/canvas-tools.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/modules/data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/modules/data.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/modules/drilldown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/modules/drilldown.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/modules/exporting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/modules/exporting.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/modules/funnel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/modules/funnel.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/modules/heatmap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/modules/heatmap.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/modules/map.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/modules/map.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/modules/no-data-to-display.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/modules/no-data-to-display.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/themes/dark-blue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/themes/dark-green.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/themes/gray.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/themes/grid.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/highcharts/themes/skies.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/jquery-1.10.2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/jquery-1.10.2.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/jquery-1.10.2.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/snapscreen/UEditorSnapscreen.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/video-js/font/vjs.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/video-js/font/vjs.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/video-js/font/vjs.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/video-js/font/vjs.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/video-js/video-js.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/video-js/video-js.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/video-js/video-js.swf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/video-js/video.dev.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/video-js/video.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/webuploader/Uploader.swf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/webuploader/webuploader.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/webuploader/webuploader.custom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/webuploader/webuploader.custom.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/webuploader/webuploader.flashonly.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/webuploader/webuploader.flashonly.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/webuploader/webuploader.html5only.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/webuploader/webuploader.html5only.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/webuploader/webuploader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/webuploader/webuploader.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/webuploader/webuploader.withoutimage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/webuploader/webuploader.withoutimage.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/xss.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/zeroclipboard/ZeroClipboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/zeroclipboard/ZeroClipboard.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/third-party/zeroclipboard/ZeroClipboard.swf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/ueditor.all.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/ueditor.all.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/ueditor.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/ueditor.parse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/ueditor.parse.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/static/plugins/ueditor/upload_config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/account/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/account/info.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/account/set.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/common/layout_main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/common/layout_user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/common/pagenation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/common/tab_account.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/common/tab_finance.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/common/tab_food.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/common/tab_member.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/common/tab_stat.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/common/tab_user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/error/error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/finance/account.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/finance/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/finance/pay_info.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/food/cat.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/food/cat_set.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/food/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/food/info.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/food/set.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/index/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/member/comment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/member/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/member/info.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/member/set.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/stat/food.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/stat/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/stat/member.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/stat/share.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/user/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/user/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webs/templates/user/reset_pwd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/application.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/base_setting.py" beforeDir="false" afterPath="$PROJECT_DIR$/configs/base_setting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/local_setting.py" beforeDir="false" afterPath="$PROJECT_DIR$/configs/local_setting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webs/controllers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/webs/controllers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webs/controllers/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/webs/controllers/index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www.py" beforeDir="false" afterPath="$PROJECT_DIR$/www.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +685,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="90">
+              <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -34,8 +695,8 @@
         <entry file="file://$PROJECT_DIR$/readme.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="60">
-                <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="12" />
+              <first_editor relative-caret-position="90">
+                <caret line="3" selection-start-line="3" selection-end-line="3" />
               </first_editor>
               <second_editor />
             </state>
@@ -54,8 +715,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="330">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -75,8 +736,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webs/controllers/index.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="285">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+              <folding>
+                <element signature="e#24#54#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -85,7 +749,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="426">
-              <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+              <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -93,8 +757,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+            <state relative-caret-position="330">
+              <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -162,17 +826,18 @@
             <path>
               <item name="flask_mvc" type="b2602c69:ProjectViewProjectNode" />
               <item name="flask_mvc" type="462c0819:PsiDirectoryNode" />
-              <item name="configs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flask_mvc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flask_mvc" type="462c0819:PsiDirectoryNode" />
               <item name="jobs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flask_mvc" type="b2602c69:ProjectViewProjectNode" />
               <item name="flask_mvc" type="462c0819:PsiDirectoryNode" />
               <item name="webs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flask_mvc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flask_mvc" type="462c0819:PsiDirectoryNode" />
+              <item name="webs" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -217,15 +882,15 @@
       <workItem from="1551441014572" duration="4800000" />
       <workItem from="1551502002739" duration="653000" />
       <workItem from="1551515644564" duration="5327000" />
-      <workItem from="1552050653558" duration="1875000" />
+      <workItem from="1552050653558" duration="3464000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12655000" />
+    <option name="totallyTimeSpent" value="14244000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="113" y="16" width="1400" height="1000" extended-state="0" />
+    <frame x="113" y="16" width="1400" height="1000" extended-state="1" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18507463" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -288,16 +953,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="90">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="60">
-            <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="12" />
+          <first_editor relative-caret-position="90">
+            <caret line="3" selection-start-line="3" selection-end-line="3" />
           </first_editor>
           <second_editor />
         </state>
@@ -312,8 +977,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="330">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
@@ -329,8 +994,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+        <state relative-caret-position="330">
+          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -347,14 +1012,17 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="426">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webs/controllers/index.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="285">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#24#54#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
