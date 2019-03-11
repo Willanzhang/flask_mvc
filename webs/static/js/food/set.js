@@ -32,19 +32,19 @@ var food_set_ops = {
             $(".wrap_food_set .upload_pic_wrap").submit();
         });
 
-        $(".wrap_food_set select[name=cat_id]").select2({
+        $(".wrap_food_set select[name=cat_id]").select({
             language: "zh-CN",
             width: '100%'
         });
 
-        $(".wrap_food_set input[name=tags]").tagsInput({
-            width: 'auto',
-            height: 40,
-            onAddTag: function (tag) {
-            },
-            onRemoveTag: function (tag) {
-            }
-        });
+        // $(".wrap_food_set input[name=tags]").tagsInput({
+        //     width: 'auto',
+        //     height: 40,
+        //     onAddTag: function (tag) {
+        //     },
+        //     onRemoveTag: function (tag) {
+        //     }
+        // });
 
         $(".wrap_food_set .save").click(function () {
             var btn_target = $(this);
