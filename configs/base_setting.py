@@ -39,8 +39,8 @@ MINA_APP = {
 
 UPLOAD = {
     'ext': ['jpg', 'gif', 'bmp', 'jpeg', 'png'],
-    'prefix_path': '/web/static/upload',
-    'prefix_url': '/static.upload/'
+    'prefix_path': '/webs/static/upload',
+    'prefix_url': '/status/upload/'
 }
 
 APP = {

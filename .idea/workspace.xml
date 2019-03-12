@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7af30ca-9b57-4707-b5e5-63ff8e49e256" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/common/libs/UploadService.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webs/controllers/upload/Upload.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webs/static/js/food/set.js" beforeDir="false" afterPath="$PROJECT_DIR$/webs/static/js/food/set.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webs/templates/common/tab_food.html" beforeDir="false" afterPath="$PROJECT_DIR$/webs/templates/common/tab_food.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webs/templates/food/cat.html" beforeDir="false" afterPath="$PROJECT_DIR$/webs/templates/food/cat.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webs/templates/food/cat_set.html" beforeDir="false" afterPath="$PROJECT_DIR$/webs/templates/food/cat_set.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webs/templates/food/set.html" beforeDir="false" afterPath="$PROJECT_DIR$/webs/templates/food/set.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www.py" beforeDir="false" afterPath="$PROJECT_DIR$/www.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/libs/UploadService.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/libs/UploadService.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/base_setting.py" beforeDir="false" afterPath="$PROJECT_DIR$/configs/base_setting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webs/controllers/upload/Upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/webs/controllers/upload/Upload.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,7 +21,7 @@
             <entry file="file://$PROJECT_DIR$/www.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="510">
-                  <caret line="30" column="52" lean-forward="true" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
+                  <caret line="30" column="52" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
                 </state>
               </provider>
             </entry>
@@ -34,8 +29,11 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/webs/static/js/food/set.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1059">
-                  <caret line="157" column="32" lean-forward="true" selection-start-line="157" selection-start-column="32" selection-end-line="157" selection-end-column="32" />
+                <state relative-caret-position="267">
+                  <caret line="162" column="6" selection-start-line="141" selection-start-column="4" selection-end-line="162" selection-end-column="6" />
+                  <folding>
+                    <element signature="e#4336#5603#0" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -43,10 +41,10 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/webs/controllers/upload/Upload.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="614">
-                  <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+                <state relative-caret-position="438">
+                  <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
                   <folding>
-                    <element signature="e#17#59#0" expanded="true" />
+                    <element signature="e#17#68#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -56,7 +54,7 @@
             <entry file="file://$PROJECT_DIR$/common/libs/Helper.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="506">
-                  <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
+                  <caret line="66" selection-start-line="66" selection-end-line="66" />
                   <folding>
                     <element signature="e#17#53#0" expanded="true" />
                     <element signature="e#297#1333#0" />
@@ -65,20 +63,32 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/common/libs/UploadService.py">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/flask/app.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
-                  <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+                <state relative-caret-position="473">
+                  <caret line="350" column="8" selection-start-line="350" selection-start-column="8" selection-end-line="350" selection-end-column="8" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/flask/app.py">
+            <entry file="file://$PROJECT_DIR$/common/libs/UploadService.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="473">
-                  <caret line="350" column="8" lean-forward="true" selection-start-line="350" selection-start-column="8" selection-end-line="350" selection-end-column="8" />
+                <state relative-caret-position="324">
+                  <caret line="18" column="49" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="49" />
+                  <folding>
+                    <element signature="e#17#70#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/configs/base_setting.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="128">
+                  <caret line="34" column="12" lean-forward="true" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
                 </state>
               </provider>
             </entry>
@@ -103,7 +113,7 @@
             <entry file="file://$PROJECT_DIR$/webs/controllers/food/Food.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="486">
-                  <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+                  <caret line="18" selection-start-line="18" selection-end-line="18" />
                   <folding>
                     <element signature="e#24#69#0" expanded="true" />
                   </folding>
@@ -115,7 +125,7 @@
             <entry file="file://$PROJECT_DIR$/webs/templates/food/cat.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="523">
-                  <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+                  <caret line="73" selection-start-line="73" selection-end-line="73" />
                 </state>
               </provider>
             </entry>
@@ -124,7 +134,7 @@
             <entry file="file://$PROJECT_DIR$/webs/templates/food/set.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="546">
-                  <caret line="86" column="6" lean-forward="true" selection-start-line="86" selection-start-column="6" selection-end-line="86" selection-end-column="6" />
+                  <caret line="86" column="6" selection-start-line="86" selection-start-column="6" selection-end-line="86" selection-end-column="6" />
                 </state>
               </provider>
             </entry>
@@ -133,7 +143,7 @@
             <entry file="file://$PROJECT_DIR$/webs/templates/food/cat_set.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="-17">
-                  <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+                  <caret line="3" selection-start-line="3" selection-end-line="3" />
                 </state>
               </provider>
             </entry>
@@ -242,7 +252,6 @@
         <option value="$PROJECT_DIR$/webs/controllers/user/User.py" />
         <option value="$PROJECT_DIR$/configs/local_setting.py" />
         <option value="$PROJECT_DIR$/webs/templates/common/layout_main.html" />
-        <option value="$PROJECT_DIR$/configs/base_setting.py" />
         <option value="$PROJECT_DIR$/application.py" />
         <option value="$PROJECT_DIR$/webs/static/js/common.js" />
         <option value="$PROJECT_DIR$/common/models/food/FoodCat.py" />
@@ -254,9 +263,10 @@
         <option value="$PROJECT_DIR$/webs/templates/food/set.html" />
         <option value="$PROJECT_DIR$/webs/static/js/food/set.js" />
         <option value="$PROJECT_DIR$/www.py" />
-        <option value="$PROJECT_DIR$/webs/controllers/upload/Upload.py" />
         <option value="$PROJECT_DIR$/common/libs/Helper.py" />
+        <option value="$PROJECT_DIR$/webs/controllers/upload/Upload.py" />
         <option value="$PROJECT_DIR$/common/libs/UploadService.py" />
+        <option value="$PROJECT_DIR$/configs/base_setting.py" />
       </list>
     </option>
   </component>
@@ -293,6 +303,11 @@
             <path>
               <item name="pyton_flask_mvc" type="b2602c69:ProjectViewProjectNode" />
               <item name="pyton_flask_mvc" type="462c0819:PsiDirectoryNode" />
+              <item name="configs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pyton_flask_mvc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pyton_flask_mvc" type="462c0819:PsiDirectoryNode" />
               <item name="webs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -320,6 +335,13 @@
               <item name="webs" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="plugins" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pyton_flask_mvc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pyton_flask_mvc" type="462c0819:PsiDirectoryNode" />
+              <item name="webs" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="upload20190312" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -371,12 +393,12 @@
       <workItem from="1551668841643" duration="11339000" />
       <workItem from="1551685290028" duration="9023000" />
       <workItem from="1551695414465" duration="57397000" />
-      <workItem from="1551878057024" duration="38610000" />
+      <workItem from="1551878057024" duration="41798000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124324000" />
+    <option name="totallyTimeSpent" value="127512000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -421,16 +443,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webs/controllers/api/Member.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2565">
-          <caret line="95" column="41" lean-forward="true" selection-start-line="95" selection-start-column="41" selection-end-line="95" selection-end-column="41" />
-          <folding>
-            <element signature="e#17#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webs/controllers/user/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -655,13 +667,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs/base_setting.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="33" column="3" lean-forward="true" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/common/models/member/member.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -702,7 +707,7 @@
     <entry file="file://$PROJECT_DIR$/webs/controllers/food/Food.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="e#24#69#0" expanded="true" />
           </folding>
@@ -719,7 +724,7 @@
     <entry file="file://$PROJECT_DIR$/webs/templates/food/cat_set.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-17">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
@@ -737,14 +742,14 @@
     <entry file="file://$PROJECT_DIR$/webs/templates/food/cat.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="523">
-          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webs/templates/food/set.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
-          <caret line="86" column="6" lean-forward="true" selection-start-line="86" selection-start-column="6" selection-end-line="86" selection-end-column="6" />
+          <caret line="86" column="6" selection-start-line="86" selection-start-column="6" selection-end-line="86" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -761,7 +766,7 @@
     <entry file="file://$PROJECT_DIR$/www.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
-          <caret line="30" column="52" lean-forward="true" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
+          <caret line="30" column="52" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -771,31 +776,14 @@
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/flask/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="473">
-          <caret line="350" column="8" lean-forward="true" selection-start-line="350" selection-start-column="8" selection-end-line="350" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webs/static/js/food/set.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1059">
-          <caret line="157" column="32" lean-forward="true" selection-start-line="157" selection-start-column="32" selection-end-line="157" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webs/controllers/upload/Upload.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="614">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="e#17#59#0" expanded="true" />
-          </folding>
+          <caret line="350" column="8" selection-start-line="350" selection-start-column="8" selection-end-line="350" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/common/libs/Helper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
-          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
           <folding>
             <element signature="e#17#53#0" expanded="true" />
             <element signature="e#297#1333#0" />
@@ -803,10 +791,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/webs/static/js/food/set.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="162" column="6" selection-start-line="141" selection-start-column="4" selection-end-line="162" selection-end-column="6" />
+          <folding>
+            <element signature="e#4336#5603#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webs/controllers/upload/Upload.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
+          <folding>
+            <element signature="e#17#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/common/libs/UploadService.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+        <state relative-caret-position="324">
+          <caret line="18" column="49" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="49" />
+          <folding>
+            <element signature="e#17#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webs/static/upload20190312/6c4998d3ed094d4ba6e0d4fe9b1b7ce4.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/base_setting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="34" column="12" lean-forward="true" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
         </state>
       </provider>
     </entry>
