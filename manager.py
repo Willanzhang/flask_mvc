@@ -1,4 +1,4 @@
-from application import app, manager
+from application import manager
 from flask_script import Server
 from www import *
 

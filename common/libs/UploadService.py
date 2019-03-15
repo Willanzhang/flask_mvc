@@ -1,7 +1,8 @@
 # coding = utf-8
 from werkzeug.utils import secure_filename  # 获取安全文件名
-from application import app
+from application import app, db
 from common.libs.Helper import getCurrentDate
+from common.models.Image import Image
 import os, stat, uuid
 
 class UploadService():
@@ -25,7 +26,14 @@ class UploadService():
         # uuid 根据硬件和程序生成已个唯一不重复的字符串
         file_name = str(uuid.uuid4()).replace("-", "") + "." + ext
         file.save("{0}/{1}".format(save_dir, file_name))
+
+        model_image = Image()
+        model_image.file_key = file_dir + "/" + file_name
+        model_image.created_time = getCurrentDate()
+        db.session.add(model_image)
+        db.session.commit()
+
         resp['data'] = {
-            'file_key': file_dir + '/' + file_name
+            'file_key': model_image.file_key
         }
         return resp
