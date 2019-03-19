@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c7af30ca-9b57-4707-b5e5-63ff8e49e256" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/libs/UploadService.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/libs/UploadService.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/libs/UrlManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/libs/UrlManager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/base_setting.py" beforeDir="false" afterPath="$PROJECT_DIR$/configs/base_setting.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webs/controllers/upload/Upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/webs/controllers/upload/Upload.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webs/static/upload20190312/6c4998d3ed094d4ba6e0d4fe9b1b7ce4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webs/static/js/food/set.js" beforeDir="false" afterPath="$PROJECT_DIR$/webs/static/js/food/set.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webs/templates/food/set.html" beforeDir="false" afterPath="$PROJECT_DIR$/webs/templates/food/set.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5620957">
+    <splitter split-orientation="horizontal" split-proportion="0.3389392">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -72,8 +68,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/webs/controllers/upload/Upload.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="113">
-                  <caret line="62" column="24" lean-forward="true" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
+                <state relative-caret-position="305">
+                  <caret line="60" column="20" lean-forward="true" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
                   <folding>
                     <element signature="e#17#62#0" expanded="true" />
                   </folding>
@@ -139,11 +135,29 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/webs/templates/food/set.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="276">
-                  <caret line="76" column="18" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
+                <state relative-caret-position="431">
+                  <caret line="104" column="73" selection-start-line="104" selection-start-column="73" selection-end-line="104" selection-end-column="73" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/webs/static/js/food/set.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="131">
+                  <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="46" selection-end-column="11" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/webs/static/plugins/select2/select2.pinyin.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="230">
+                  <caret line="6261" column="10" selection-start-line="6261" selection-start-column="10" selection-end-line="6261" selection-end-column="10" />
                 </state>
               </provider>
             </entry>
@@ -180,7 +194,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>User</find>
       <find>da</find>
       <find>姓名</find>
       <find>check_login</find>
@@ -205,11 +218,12 @@
       <find>add</find>
       <find>db</find>
       <find>ops_render</find>
-      <find>FoodCat</find>
       <find>root_path</find>
       <find>tagsInput</find>
       <find>prefix_path</find>
       <find>static</find>
+      <find>FoodCat</find>
+      <find>tags</find>
     </findStrings>
     <replaceStrings>
       <replace>ops_render</replace>
@@ -264,8 +278,6 @@
         <option value="$PROJECT_DIR$/webs/templates/food/cat.html" />
         <option value="$PROJECT_DIR$/webs/templates/common/tab_food.html" />
         <option value="$PROJECT_DIR$/webs/templates/food/cat_set.html" />
-        <option value="$PROJECT_DIR$/webs/templates/food/set.html" />
-        <option value="$PROJECT_DIR$/webs/static/js/food/set.js" />
         <option value="$PROJECT_DIR$/www.py" />
         <option value="$PROJECT_DIR$/common/libs/Helper.py" />
         <option value="$PROJECT_DIR$/configs/base_setting.py" />
@@ -276,6 +288,8 @@
         <option value="$PROJECT_DIR$/common/libs/UploadService.py" />
         <option value="$PROJECT_DIR$/common/libs/UrlManager.py" />
         <option value="$PROJECT_DIR$/webs/controllers/upload/Upload.py" />
+        <option value="$PROJECT_DIR$/webs/templates/food/set.html" />
+        <option value="$PROJECT_DIR$/webs/static/js/food/set.js" />
       </list>
     </option>
   </component>
@@ -312,12 +326,6 @@
             <path>
               <item name="pyton_flask_mvc" type="b2602c69:ProjectViewProjectNode" />
               <item name="pyton_flask_mvc" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pyton_flask_mvc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pyton_flask_mvc" type="462c0819:PsiDirectoryNode" />
               <item name="configs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -336,6 +344,34 @@
               <item name="pyton_flask_mvc" type="462c0819:PsiDirectoryNode" />
               <item name="webs" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pyton_flask_mvc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pyton_flask_mvc" type="462c0819:PsiDirectoryNode" />
+              <item name="webs" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pyton_flask_mvc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pyton_flask_mvc" type="462c0819:PsiDirectoryNode" />
+              <item name="webs" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="food" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pyton_flask_mvc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pyton_flask_mvc" type="462c0819:PsiDirectoryNode" />
+              <item name="webs" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pyton_flask_mvc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pyton_flask_mvc" type="462c0819:PsiDirectoryNode" />
+              <item name="webs" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="food" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -387,18 +423,18 @@
       <workItem from="1551668841643" duration="11339000" />
       <workItem from="1551685290028" duration="9023000" />
       <workItem from="1551695414465" duration="57397000" />
-      <workItem from="1551878057024" duration="52658000" />
+      <workItem from="1551878057024" duration="55403000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138372000" />
+    <option name="totallyTimeSpent" value="141117000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17590618" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17590618" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -412,7 +448,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3290993" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.41323212" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.22125813" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -437,20 +473,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webs/templates/common/tab_member.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="33" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webs/templates/member/comment.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-220">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webs/templates/user/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="452">
@@ -702,16 +724,6 @@
     <entry file="file://$PROJECT_DIR$/webs/static/plugins/ueditor/upload_config.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/webs/static/js/food/set.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="162" column="6" selection-start-line="141" selection-start-column="4" selection-end-line="162" selection-end-column="6" />
-          <folding>
-            <element signature="e#4336#5603#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webs/static/upload20190312/6c4998d3ed094d4ba6e0d4fe9b1b7ce4.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -719,13 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="554">
           <caret line="350" column="8" selection-start-line="350" selection-start-column="8" selection-end-line="350" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webs/templates/food/set.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="76" column="18" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -825,13 +830,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/core-scripting.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="44" column="22" selection-start-line="44" selection-start-column="22" selection-end-line="44" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webs/static/plugins/select2/select2.pinyin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="6261" column="10" selection-start-line="6261" selection-start-column="10" selection-end-line="6261" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/webs/controllers/upload/Upload.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="62" column="24" lean-forward="true" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
+        <state relative-caret-position="305">
+          <caret line="60" column="20" lean-forward="true" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
           <folding>
             <element signature="e#17#62#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webs/templates/food/set.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="104" column="73" selection-start-line="104" selection-start-column="73" selection-end-line="104" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webs/static/js/food/set.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="46" selection-end-column="11" />
         </state>
       </provider>
     </entry>
