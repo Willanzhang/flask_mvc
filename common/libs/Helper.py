@@ -64,3 +64,21 @@ def iPagination( params ):
 '''
 def getCurrentDate(format="%Y-%m-%d %H:%M:%S"):
     return datetime.datetime.now().strftime(format)
+
+'''
+根据某个字段获取一个dic出来
+'''
+def getDictFilterField( db_model, select_field, key_field, id_list):
+    ret = {}
+    query = db_model.query
+    if id_list and len(id_list) > 0:
+        query = query.filter_by(select_field.in_(id_list))
+
+    list = query.all()
+    if not list:
+        return ret
+    for item in list:
+        if not hasattr(item, key_field):
+            break
+        ret[getattr(item, key_field)] = item
+    return ret
