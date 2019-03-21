@@ -52,14 +52,30 @@ def index():
     resp_data['search_con'] = req
     resp_data['current'] = 'index'
     resp_data['cat_mapping'] = cat_mapping
-    app.logger.info('----------')
-    app.logger.info(cat_mapping)
     resp_data['status_mapping'] = app.config['STATUS_MAPPING']
     return ops_render("food/index.html", resp_data)
 
 @route_food.route( "/info" )
 def info():
-    return ops_render( "food/info.html" )
+    resp_data = {}
+    req = request.args
+    id = int(req.get('id', 0))
+    reback_url = UrlManager.buildUrl(('/food/index'))
+
+    if id < 1:
+        return redirect(reback_url)
+
+    info = Food.query.filter_by(id=id).first()
+    if not info:
+        return redirect(reback_url)
+
+    stock_change_list = FoodStockChangeLog.query.filter(FoodStockChangeLog.food_id==id)\
+        .order_by(FoodStockChangeLog.id.desc()).all()
+
+    resp_data['info'] = info
+    resp_data['stock_change_list'] = stock_change_list
+    resp_data['current'] = 'index'
+    return ops_render("food/info.html", resp_data)
 
 
 @route_food.route( "/set", methods=["GET", "POST"])
@@ -184,12 +200,9 @@ def catSet():
         resp_data = {}
         req = request.args
         id = int(req.get('id', 0))
-
         info = None
         if id:
             info = FoodCat.query.filter_by(id=id).first()
-            app.logger.info('------------------')
-            app.logger.info(info.name)
         resp_data['info'] = info
         return ops_render( "food/cat_set.html",resp_data)
 
@@ -247,5 +260,39 @@ def catOps():
 
     food_cat_info.update_time = getCurrentDate()
     db.session.add(food_cat_info)
+    db.session.commit()
+    return jsonify(resp)
+
+@route_food.route( "/ops", methods=["POST","GET"] )
+def ops():
+    resp = {'code': 200, 'msg': '操作成功~~~', 'data': {}}
+    req = request.values
+
+    id = req['id'] if 'id' in req else 0
+    act = req['act'] if 'act' in req else ''
+    if not id:
+        resp['code'] = -1
+        resp['msg'] = '请选择要操作的账号~~'
+        return jsonify(resp)
+
+    if act not in ['remove', 'recover']:
+        resp['code'] = -1
+        resp['msg'] = '操作有误请重试~~'
+        return jsonify(resp)
+
+    food_info = Food.query.filter_by(id=id).first()
+
+    if not food_info:
+        resp['code'] = -1
+        resp['msg'] = '指定美食不存在~~'
+        return jsonify(resp)
+
+    if act == "remove":
+        food_info.status = 0
+    elif act == "recover":
+        food_info.status = 1
+
+    food_info.update_time = getCurrentDate()
+    db.session.add(food_info)
     db.session.commit()
     return jsonify(resp)
