@@ -1,5 +1,6 @@
 //index.js
 //获取应用实例
+import { fetch } from '../../utils/util'
 var app = getApp();
 Page({
     data: {
@@ -15,67 +16,13 @@ Page({
         scrollTop: "0",
         loadingMoreHidden: true,
         searchInput: '',
+        p: 1,
+        processing: false
     },
     onLoad: function () {
-        var that = this;
-
+        this.getPageInfo()
         wx.setNavigationBarTitle({
             title: app.globalData.shopName
-        });
-
-        that.setData({
-            banners: [
-                {
-                    "id": 1,
-                    "pic_url": "/images/food.jpg"
-                },
-                {
-                    "id": 2,
-                    "pic_url": "/images/food.jpg"
-                },
-                {
-                    "id": 3,
-                    "pic_url": "/images/food.jpg"
-                }
-            ],
-            categories: [
-                {id: 0, name: "全部"},
-                {id: 1, name: "川菜"},
-                {id: 2, name: "东北菜"},
-            ],
-            activeCategoryId: 0,
-			goods: [
-			                {
-			                    "id": 1,
-			                    "name": "小鸡炖蘑菇-1",
-			                    "min_price": "15.00",
-			                    "price": "15.00",
-			                    "pic_url": "/images/food.jpg"
-			                },
-			                {
-			                    "id": 2,
-			                    "name": "小鸡炖蘑菇-1",
-			                    "min_price": "15.00",
-			                    "price": "15.00",
-			                    "pic_url": "/images/food.jpg"
-			                },
-			                {
-			                    "id": 3,
-			                    "name": "小鸡炖蘑菇-1",
-			                    "min_price": "15.00",
-			                    "price": "15.00",
-			                    "pic_url": "/images/food.jpg"
-			                },
-			                {
-			                    "id": 4,
-			                    "name": "小鸡炖蘑菇-1",
-			                    "min_price": "15.00",
-			                    "price": "15.00",
-			                    "pic_url": "/images/food.jpg"
-			                }
-
-			 ],
-            loadingMoreHidden: false
         });
     },
     scroll: function (e) {
@@ -114,5 +61,61 @@ Page({
         wx.navigateTo({
             url: "/pages/food/info?id=" + e.currentTarget.dataset.id
         });
+    },
+    getPageInfo () {
+        fetch('POST', '/food/index').then(res => {
+            if(res.code === 200) {
+                this.setData({
+                    data: res.data
+                })
+                this.getFoodList()
+            }
+        })
+    },
+    getFoodList () {
+
+        console.log(this.data.loadingMoreHidden)
+        if(this.data.processing) {
+            return
+        }
+        if(!this.data.loadingMoreHidden) {
+            return
+        }
+        this.setData({
+            processing: true
+        })
+        let params = {
+            cat_id: this.data.activeCategoryId,
+            mix_ky: this.data.searchInput,
+            p: this.data.p
+        }
+        fetch('POST', '/food/search', params).then(res => {
+            if (res.code === 200) {
+                this.setData({
+                    goods: this.data.goods.concat(res.data.list|| []),
+                    P: ++this.data.p,
+                    processing: false
+                })
+                if (res.data.has_more === 0) {
+                    this.setData({
+                        loadingMoreHidden: true
+                    })
+                }
+            }
+        })
+    },
+    catClick (e) {
+        this.setData({
+            activeCategoryId: e.currentTarget.id,
+            loadingMoreHidden: true,
+            goods: [],
+            p: 1
+        })
+        this.getFoodList()
+    },
+    onReachBottom () {
+        setTimeout(() => {
+            this.getFoodList()
+        }, 500);
     }
 });

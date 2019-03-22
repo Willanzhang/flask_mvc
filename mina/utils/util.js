@@ -18,7 +18,8 @@ const fetch = (method, url, params) => {
   const lkey = wx.getStorageSync('lkey') || ''
   const sessionData = wx.getStorageSync('sessionData') || ''
   // const channelTag = wx.getStorageSync('channelTag') || '1'
-  const sendData = { channelType: '1', channelTag: '1', lkey: lkey, sessionData: sessionData ,...params}
+  // const sendData = { channelType: '1', channelTag: '1', lkey: lkey, sessionData: sessionData ,...params}
+  const sendData = { ...params }
   const data = getApp().globalData
   return new Promise((resolve, reject) => {
     wx.request({
@@ -29,6 +30,7 @@ const fetch = (method, url, params) => {
       // url: 'https://api.66jingcai.cn' + url,
       data: sendData,
       header: {
+        'Authorization': wx.getStorageSync('token') || '',
         'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
       method: method,

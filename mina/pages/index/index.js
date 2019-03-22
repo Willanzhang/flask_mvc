@@ -1,6 +1,7 @@
 //login.js
 //获取应用实例
 let app = getApp();
+import { fetch } from '../../utils/util'
 Page({
   data: {
     remind: '加载中',
@@ -30,6 +31,7 @@ Page({
         remind: ''
       });
     }, 1000);
+    console.log('123')
     wx.onAccelerometerChange(function(res) {
       let angle = -(res.x*30).toFixed(1);
       if(angle>14){ angle=14; }
@@ -46,17 +48,13 @@ Page({
     wx.login({
       success(res) {
         if (res.code) {
-          wx.request({
-            url: app.buildUrl('/member/check-reg'),
-            method: "POST",
-            header: app.getRequestHeader(),
-            data: {code: res.code},
-            success: function(res) {
-              if (res.data.code === 200) {
+          fetch("POST", '/member/check-reg', {code: res.code})
+            .then(res => {
+              if (res.code === 200) {
                 that.setData({
                   reFlag: true
                 },()=> {
-                  app.setCache("token", res.data.data.token)
+                  app.setCache("token", res.data.token)
                   that.goToIndex()
                 })
               } else {
@@ -64,8 +62,7 @@ Page({
                   reFlag: false
                 })
               }
-            }
-          })
+            })
         } else {
           app.alert({'content': '登录失败，请重新点击~~'})
         }

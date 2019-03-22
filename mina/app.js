@@ -1,9 +1,11 @@
 //app.js
+import config from './utils/env'
 App({
     onLaunch: function () {
     },
     globalData: {
         userInfo: null,
+        config: config,
         version: "1.0",
         shopName: "Python3 + Flask 订餐全栈系统",
         domain:"http://127.0.0.1:5000/api"
@@ -54,7 +56,8 @@ App({
     },
     getRequestHeader:function(){
         return {
-            'content-type': 'application/x-www-form-urlencoded'
+            'content-type': 'application/x-www-form-urlencoded',
+            'Authorization': this.getCache('token')
         }
     },
     buildUrl:function(path, params) {

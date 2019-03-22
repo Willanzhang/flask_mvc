@@ -34,7 +34,7 @@ STATUS_MAPPING = {
 '''
 MINA_APP = {
     'appid': 'wxe3445334e3277c73',
-    'appkey': 'e2z80d2b07de19a46caef2wc1eb16e32bf5'
+    'appkey': 'e280d207de19a46caef2c1eb16e32bf5'
 }
 
 UPLOAD = {

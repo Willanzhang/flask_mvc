@@ -13,13 +13,13 @@ if(isDev) {
   config = {
     appid: 'wxe3445334e3277c73',
     webView: 'https://h5dev.66jingcai.cn',
-    url: 'http://127.0.0.1/api'
+    url: 'http://127.0.0.1:5000/api'
   }
 } else {
   config = {
     appid: 'wxe3445334e3277c73',
     webView: 'https://m.66jingcai.cn',
-    url: 'http://127.0.0.1/api'
+    url: 'http://127.0.0.1:5000/api'
   }
 }
 module.exports = config

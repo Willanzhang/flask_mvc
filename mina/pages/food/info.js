@@ -1,7 +1,8 @@
 //index.js
+import { fetch } from '../../utils/util'
 //获取应用实例
-var app = getApp();
-var WxParse = require('../../wxParse/wxParse.js');
+let app = getApp();
+let WxParse = require('../../wxParse/wxParse.js');
 
 Page({
     data: {
@@ -129,6 +130,16 @@ Page({
     swiperchange: function (e) {
         this.setData({
             swiperCurrent: e.detail.current
+        })
+    },
+    getInfo () {
+        let params = {
+
+        }
+        fetch('POST', '/food/inof', params).then(res => {
+            if (res.code !== 200) {
+                app.alert()
+            }
         })
     }
 });
