@@ -165,7 +165,7 @@ def ops():
     if act == "remove":
         user_info.status = 0
     elif act == "recover":
-        user_info.status = 0
+        user_info.status = 1
 
     user_info.update_time = getCurrentDate()
     db.session.add(user_info)
