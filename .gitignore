@@ -17,4 +17,4 @@ deploy_key_rsa
 
 
 # IDE
-.idea
+*.idea
