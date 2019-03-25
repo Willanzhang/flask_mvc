@@ -1,8 +1,9 @@
 # coding=utf-8
 from webs.controllers.api import route_api
-from flask import request, jsonify
+from flask import request, jsonify, g
 from common.models.food.FoodCat import FoodCat
 from common.models.food.Food import Food
+from common.models.member.MemberCart import MemberCart
 from common.libs.UrlManager import UrlManager
 from sqlalchemy import or_
 from application import app, db
@@ -94,6 +95,10 @@ def foodInfo():
         resp['msg'] = "美食已下架~~~"
         return jsonify(resp)
 
+    member_info = g.member_info
+    cart_number = 0
+    if member_info:
+        cart_number = MemberCart.query.filter_by(member_id=member_info.id).count()
     info = {
         'id': food_info.id,
         'name': food_info.name,
@@ -104,7 +109,8 @@ def foodInfo():
         'comment_count': str(food_info.comment_count),
         'pic_url': UrlManager.buildImageUrl(food_info.main_image),
         'pics': [UrlManager.buildImageUrl(food_info.main_image)],
-
+        'pics': [UrlManager.buildImageUrl(food_info.main_image)],
     }
     resp['data']['info'] = info
+    resp['data']['cart_number'] = cart_number
     return jsonify(resp)

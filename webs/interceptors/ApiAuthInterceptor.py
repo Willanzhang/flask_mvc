@@ -1,11 +1,9 @@
 # coding = utf-8
 from application import app
-from flask import request, redirect, g, jsonify
+from flask import request, g, jsonify
 from common.models.member.member import Member
 from common.libs.member.MemberService import MemberService
-from common.libs.UrlManager import UrlManager
 import re
-
 
 '''
 api认证

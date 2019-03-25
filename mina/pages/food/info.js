@@ -19,7 +19,7 @@ Page({
         shopCarInfo: {},
         shopType: "addShopCar",//购物类型，加入购物车或立即购买，默认为加入购物车,
         id: 0,
-        shopCarNum: 4,
+        shopCarNum: 0,
         commentCount:2
     },
     onLoad: function (options) {
@@ -52,16 +52,18 @@ Page({
         // WxParse.wxParse('article', 'html', that.data.info.summary, that, 5);
     },
     onShareAppMessage () {
+        let params = {
+            url: getCurrentPageUrlWithArgs()
+        }
+        console.log(params, '123')
+        fetch('POST', '/member/share', params)
         return {
             title: this.data.info.name,
             path: `/page/food/info?id=${this.data.id}`,
             success: function(res) {
                 // 成功
                 console.log('成功')
-                let params = {
-                    url: getCurrentPageUrlWithArgs()
-                }
-                fetch('POST', '/member/share', params)
+                
             },
             fail: function() {
                 // 失敗
@@ -91,7 +93,20 @@ Page({
         this.bindGuiGeTap();
     },
     addShopCar: function () {
-
+        let params = {
+            id: this.data.info.id,
+            number: this.data.buyNumber
+        }
+        fetch('POST', '/cart/set', params).then(res => {
+            if(res === 200) {
+                this.setData({
+                    hideShopPopup: true
+                })
+            }
+            app.alert({
+                content: res.msg
+            })
+        })
     },
     buyNow: function () {
         wx.navigateTo({
@@ -149,7 +164,8 @@ Page({
             if (res.code === 200) {
                 this.setData({
                     info: res.data.info,
-                    buyNumMax: res.data.info.stock
+                    buyNumMax: res.data.info.stock,
+                    shopCarNum: res.data.cart_number
                 })
                 WxParse.wxParse('article', 'html', this.data.info.summary, this, 5)
             } else {
