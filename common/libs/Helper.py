@@ -66,13 +66,18 @@ def getCurrentDate(format="%Y-%m-%d %H:%M:%S"):
     return datetime.datetime.now().strftime(format)
 
 '''
-根据某个字段获取一个dic出来
+根据某个字段获取一个dic出来   
+getDictFilterField(Food, Food.id, 'id', food_ids)
+在 food 变表中 通过id字段查询   id字段在food_ids中， 
+[
+    id的值： item,
+] 
 '''
 def getDictFilterField( db_model, select_field, key_field, id_list):
     ret = {}
     query = db_model.query
     if id_list and len(id_list) > 0:
-        query = query.filter_by(select_field.in_(id_list))
+        query = query.filter(select_field.in_(id_list))
 
     list = query.all()
     if not list:
@@ -81,4 +86,17 @@ def getDictFilterField( db_model, select_field, key_field, id_list):
         if not hasattr(item, key_field):
             break
         ret[getattr(item, key_field)] = item
+    return ret
+
+'''
+从数组对象中获取我们需要的字段
+'''
+def selectFilterObj(obj, field):
+    ret = []
+    for item in obj:
+        if not hasattr(item, field):
+            continue
+        if getattr(item, field) in ret:
+            continue
+        ret.append(getattr(item, field))
     return ret

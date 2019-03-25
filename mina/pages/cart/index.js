@@ -1,8 +1,11 @@
 //index.js
-var app = getApp();
+import { fetch } from '../../utils/util'
+let app = getApp();
 Page({
     data: {},
     onLoad: function () {
+    },
+    onShow() {
         this.getCartList();
     },
     //每项前面的选中框
@@ -138,32 +141,15 @@ Page({
         //发送请求到后台删除数据
     },
     getCartList: function () {
-        this.setData({
-            list: [
-                {
-                    "id": 1080,
-					"food_id":"5",
-                    "pic_url": "/images/food.jpg",
-                    "name": "小鸡炖蘑菇-1",
-                    "price": "85.00",
-                    "active": true,
-                    "number": 1
-                },
-                {
-                    "id": 1081,
-					"food_id":"6",
-                    "pic_url": "/images/food.jpg",
-                    "name": "小鸡炖蘑菇-2",
-                    "price": "85.00",
-                    "active": true,
-                    "number": 1
-                }
-            ],
-            saveHidden: true,
-            totalPrice: "85.00",
-            allSelect: true,
-            noSelect: false,
-        });
-        this.setPageData( this.getSaveHide(), this.totalPrice(), this.allSelect(), this.noSelect(), this.data.list);
+        fetch('GET', '/cart/index').then(res => {
+            this.setData({
+                list:res.data.list,
+                saveHidden: true,
+                totalPrice: 0.00,
+                allSelect: true,
+                noSelect: false
+            })
+             this.setPageData( this.getSaveHide(), this.totalPrice(), this.allSelect(), this.noSelect(), this.data.list);
+        })
     }
 });

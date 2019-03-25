@@ -2,11 +2,42 @@
 from webs.controllers.api import route_api
 from flask import request, jsonify, g
 from common.models.food.Food import Food
+from common.models.member.MemberCart import MemberCart
 from common.libs.member.CartService import CartService
+from common.libs.Helper import selectFilterObj, getDictFilterField
+from common.libs.UrlManager import UrlManager
 
+@route_api.route("/cart/index")
+def cartIndex():
+    resp = {'code': 200, 'msg': '操作成功~', 'data': {}}
+    member_info = g.member_info
+    if not member_info:
+        resp['code'] = -1
+        resp['msg'] = '获取失败，未登录~~'
+        return jsonify(resp)
 
+    cart_list = MemberCart.query.filter_by(member_id=member_info.id).all()
+    data_cart_list = []
+    if cart_list:
+        # 通过 cart_list 中所有的food_id 查询出所有商品
+        food_ids = selectFilterObj(cart_list, 'food_id')
+        food_map = getDictFilterField(Food, Food.id, 'id', food_ids)
+        for item in cart_list:
+            tem_food_info = food_map[item.food_id]
+            tem_data = {
+                "id": item.id,
+                "food_id": item.food_id,
+                "number": item.quantity,
+                "name": tem_food_info.name,
+                "price": str(tem_food_info.price),
+                "pic_url": UrlManager.buildImageUrl(tem_food_info.main_image),
+                "active": True,
+            }
+            data_cart_list.append(tem_data)
+    resp['data']['list'] = data_cart_list
+    return jsonify(resp)
 
-# 提供轮播图 和菜品分类的接口
+# 添加购物车
 @route_api.route("/cart/set", methods=['POST'])
 def setCart():
     resp = {'code': 200, 'msg': '操作成功~', 'data': {}}
