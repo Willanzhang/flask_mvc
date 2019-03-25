@@ -20,10 +20,13 @@ Page({
         processing: false
     },
     onLoad: function () {
-        this.getPageInfo()
         wx.setNavigationBarTitle({
             title: app.globalData.shopName
         });
+    },
+    onShow(o) {
+        this.getPageInfo()
+        console.log(0)
     },
     scroll: function (e) {
         var that = this, scrollTop = that.data.scrollTop;

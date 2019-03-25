@@ -216,8 +216,34 @@ const formatFloat = function (f,type) {
   }
 }
 
+let getCurrentPageUrl = () => {
+  let Pages = getCurrentPages()
+  let currentPage = Pages[Pages.length - 1]
+  let url = currentPage.__route__
+  return url
+}
+
+let getCurrentPageUrlWithArgs = () => {
+  let Pages = getCurrentPages()
+  let currentPage = Pages[Pages.length - 1]
+  let url = currentPage.__route__
+  let options = currentPage.options
+
+  // 拼接url的參數
+  let urlWithArgs = url + '?'
+  for (let key in options) {
+    let value = options[key]
+    urlWithArgs += `${key}=${value}&`
+  }
+
+  urlWithArgs = urlWithArgs.substring(0, urlWithArgs.length -1)
+  return urlWithArgs
+}
+
 
 module.exports = {
+  getCurrentPageUrl,
+  getCurrentPageUrlWithArgs,
   add, // 加
   sub, // 减
   mul, // 乘

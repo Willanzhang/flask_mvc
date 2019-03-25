@@ -6,13 +6,16 @@ AUTH_COOKIE_NAME="food"
 
 # 过滤url
 IGNORE_URLS = [
-    "^/user/login",
-    "^/api"
+    "^/user/login"
 ]
 
 IGNOER_CHECK_LOGIN_URL = [
     "^/static",
     "^/favicon.ico"
+]
+
+API_IGNORE_URLS = [
+    "^/api"
 ]
 
 '''

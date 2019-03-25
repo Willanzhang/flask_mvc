@@ -86,34 +86,25 @@ def foodSearch():
 def foodInfo():
     resp = {'code': 200, 'msg': '操作成功~', 'data': {}}
     req = request.values
-    cat_id = int(req['cat_id']) if 'cat_id' in req else 0
-    p = int(req['p']) if 'p' in req else 0
-    mix_kw = str(req['mix_kw']) if 'mix_kw' in req else ''
-    query = Food.query.filter_by(status=1)
-    if p < 1:
-        p = 1
+    id = int(req['id']) if 'id' in req else 0
+    food_info = Food.query.filter_by(id=id).first()
 
-    page_size = 10
-    offset = ( p-1 ) * page_size
-    if cat_id > 0:
-        query = query.filter(Food.cat_id == cat_id)
+    if not food_info or not food_info.status:
+        resp['code'] = -1
+        resp['msg'] = "美食已下架~~~"
+        return jsonify(resp)
 
-    if 'mix_kw' in req and req['mix_kw']:
-        rule = or_(Food.name.ilike("%{0}%".format(mix_kw)), Food.tags.ilike("%{0}%".format(mix_kw)))
-        query = query.filter(rule)
+    info = {
+        'id': food_info.id,
+        'name': food_info.name,
+        'stock': food_info.stock,
+        'price': str(food_info.price),
+        'summary': str(food_info.summary),
+        'total_count': str(food_info.total_count),
+        'comment_count': str(food_info.comment_count),
+        'pic_url': UrlManager.buildImageUrl(food_info.main_image),
+        'pics': [UrlManager.buildImageUrl(food_info.main_image)],
 
-    food_list = query.order_by(Food.total_count.desc(), Food.id.desc()).offset(offset).limit(page_size).all()
-    data_food_list = []
-    if food_list:
-        for item in food_list:
-            tmp_data = {
-                'id': item.id,
-                'name': item.name,
-                'price': str(item.price),
-                'min_price': str(item.price),
-                'pic_url': UrlManager.buildImageUrl(item.main_image),
-            }
-            data_food_list.append((tmp_data))
-    resp['data']['list'] = data_food_list
-    resp['data']['has_more'] = 0 if len(data_food_list) < page_size else 1
+    }
+    resp['data']['info'] = info
     return jsonify(resp)

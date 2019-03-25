@@ -35,7 +35,6 @@ const fetch = (method, url, params) => {
       },
       method: method,
       success(res) {
-        console.log(res, '/////////////////**********----------')
         if (res.statusCode === 401) {
           let tmp = getCurrentPages()
           let tmpArr = tmp[tmp.length - 1].__route__.split('/')

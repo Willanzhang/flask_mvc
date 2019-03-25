@@ -55,7 +55,7 @@ def index():
     resp_data['status_mapping'] = app.config['STATUS_MAPPING']
     return ops_render("food/index.html", resp_data)
 
-@route_food.route( "/info" )
+@route_food.route("/info")
 def info():
     resp_data = {}
     req = request.args

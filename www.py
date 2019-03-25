@@ -4,6 +4,7 @@
 统计拦截器
 '''
 from webs.interceptors.AuthInterceptor import *
+from webs.interceptors.ApiAuthInterceptor import *
 
 '''
 蓝图功能 对所有url进行配置

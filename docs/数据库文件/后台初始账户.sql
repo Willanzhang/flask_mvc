@@ -3,3 +3,4 @@
 INSERT INTO `user` (`uid`, `nickname`, `mobile`, `email`, `sex`, `avatar`, `login_name`, `login_pwd`, `login_salt`, `status`, `updated_time`, `created_time`)
 VALUES
 	(1, 'william', '11012345679', 'apanly@163.com', 1, '', 'admin', '816440c40b7a9d55ff9eb7b20760862c', 'cF3JfH5FJfQ8B2Ba', 1, '2017-03-15 14:08:48', '2017-03-15 14:08:48');
+	

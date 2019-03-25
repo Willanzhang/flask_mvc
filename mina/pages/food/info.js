@@ -1,5 +1,6 @@
 //index.js
 import { fetch } from '../../utils/util'
+import { getCurrentPageUrlWithArgs } from '../../utils/common'
 //获取应用实例
 let app = getApp();
 let WxParse = require('../../wxParse/wxParse.js');
@@ -21,22 +22,11 @@ Page({
         shopCarNum: 4,
         commentCount:2
     },
-    onLoad: function () {
+    onLoad: function (options) {
         var that = this;
-
+        this.getInfo(options.id);
         that.setData({
-            "info": {
-                "id": 1,
-                "name": "小鸡炖蘑菇",
-                "summary": '<p>多色可选的马甲</p><p><img src="http://www.timeface.cn/uploads/times/2015/07/071031_f5Viwp.jpg"/></p><p><br/>相当好吃了</p>',
-                "total_count": 2,
-                "comment_count": 2,
-                "stock": 2,
-                "price": "80.00",
-                "main_image": "/images/food.jpg",
-                "pics": [ '/images/food.jpg','/images/food.jpg' ]
-            },
-            buyNumMax:2,
+            id: options.id,
             commentList: [
                 {
                     "score": "好评",
@@ -59,7 +49,25 @@ Page({
             ]
         });
 
-        WxParse.wxParse('article', 'html', that.data.info.summary, that, 5);
+        // WxParse.wxParse('article', 'html', that.data.info.summary, that, 5);
+    },
+    onShareAppMessage () {
+        return {
+            title: this.data.info.name,
+            path: `/page/food/info?id=${this.data.id}`,
+            success: function(res) {
+                // 成功
+                console.log('成功')
+                let params = {
+                    url: getCurrentPageUrlWithArgs()
+                }
+                fetch('POST', '/member/share', params)
+            },
+            fail: function() {
+                // 失敗
+                console.log('轉發失敗')
+            }
+        }
     },
     goShopCar: function () {
         wx.reLaunch({
@@ -132,13 +140,20 @@ Page({
             swiperCurrent: e.detail.current
         })
     },
-    getInfo () {
+    getInfo (id) {
         let params = {
-
+            id
         }
-        fetch('POST', '/food/inof', params).then(res => {
-            if (res.code !== 200) {
-                app.alert()
+        fetch('POST', '/food/info', params).then(res => {
+            console.log(res)
+            if (res.code === 200) {
+                this.setData({
+                    info: res.data.info,
+                    buyNumMax: res.data.info.stock
+                })
+                WxParse.wxParse('article', 'html', this.data.info.summary, this, 5)
+            } else {
+                app.alert(res.data.msg)
             }
         })
     }
