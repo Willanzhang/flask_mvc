@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c7af30ca-9b57-4707-b5e5-63ff8e49e256" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/base_setting.py" beforeDir="false" afterPath="$PROJECT_DIR$/configs/base_setting.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mina/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/mina/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mina/pages/food/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/mina/pages/food/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mina/pages/food/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/mina/pages/food/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mina/pages/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/mina/pages/index/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mina/utils/env.js" beforeDir="false" afterPath="$PROJECT_DIR$/mina/utils/env.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mina/utils/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/mina/utils/util.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webs/controllers/api/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/webs/controllers/api/__init__.py" afterDir="false" />
-    </list>
+    <list default="true" id="c7af30ca-9b57-4707-b5e5-63ff8e49e256" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,8 +113,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/webs/controllers/api/Food.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1246">
-                  <caret line="119" lean-forward="true" selection-start-line="119" selection-end-line="119" />
+                <state relative-caret-position="193">
+                  <caret line="86" column="33" selection-start-line="86" selection-start-column="33" selection-end-line="86" selection-end-column="33" />
                   <folding>
                     <element signature="e#15#57#0" expanded="true" />
                   </folding>
@@ -297,7 +287,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="2184" />
     <option name="y" value="125" />
     <option name="width" value="1400" />
@@ -390,16 +380,15 @@
       <workItem from="1551685290028" duration="9023000" />
       <workItem from="1551695414465" duration="57397000" />
       <workItem from="1551878057024" duration="55403000" />
-      <workItem from="1553076276033" duration="21073000" />
+      <workItem from="1553076276033" duration="21797000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162190000" />
+    <option name="totallyTimeSpent" value="162914000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19509594" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -415,7 +404,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3290993" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.15075922" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.36008677" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -777,16 +766,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webs/controllers/api/Member.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="55" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="55" />
-          <folding>
-            <element signature="e#17#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/configs/local_setting.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -850,10 +829,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/webs/controllers/api/Member.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="55" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="55" />
+          <folding>
+            <element signature="e#17#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/webs/controllers/api/Food.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1246">
-          <caret line="119" lean-forward="true" selection-start-line="119" selection-end-line="119" />
+        <state relative-caret-position="193">
+          <caret line="86" column="33" selection-start-line="86" selection-start-column="33" selection-end-line="86" selection-end-column="33" />
           <folding>
             <element signature="e#15#57#0" expanded="true" />
           </folding>
