@@ -6,6 +6,8 @@ from common.models.member.MemberCart import MemberCart
 from common.libs.member.CartService import CartService
 from common.libs.Helper import selectFilterObj, getDictFilterField
 from common.libs.UrlManager import UrlManager
+import json
+from application import app
 
 @route_api.route("/cart/index")
 def cartIndex():
@@ -70,5 +72,33 @@ def setCart():
     if not ret:
         resp['code'] = -1
         resp['msg'] = "添加购物车失败-5~~"
+
+    return jsonify(resp)
+
+@route_api.route("/cart/del", methods=['POST'])
+def delCart():
+    resp = {'code': 200, 'msg': '操作成功~', 'data': {}}
+    req = request.values
+    params_goods = req['goods'] if 'goods' in req else None
+
+    items = []
+    if params_goods:
+        items = json.loads(params_goods)
+
+
+    if not items or len(items) < 1:
+        return jsonify(resp)
+
+    member_info = g.member_info
+    if not member_info:
+        resp['code'] = -1
+        resp['msg'] = "删除购物车失败~~-1"
+        return jsonify(resp)
+
+    ret = CartService.deleteItem(member_id=member_info.id, items=items)
+    if not ret:
+        resp['code'] = -1
+        resp['msg'] = "删除购物车失败~~-2"
+        return jsonify(resp)
 
     return jsonify(resp)

@@ -64,6 +64,7 @@ Page({
         var list = that.data.list;
         list[parseInt(index)].number++;
         that.setPageData(that.getSaveHide(), that.totalPrice(), that.allSelect(), that.noSelect(), list);
+        this.setCart(list[parseInt(index)].food_id, list[parseInt(index)].number);
     },
     //减数量
     jianBtnTap: function (e) {
@@ -72,6 +73,7 @@ Page({
         if (list[parseInt(index)].number > 1) {
             list[parseInt(index)].number--;
             this.setPageData(this.getSaveHide(), this.totalPrice(), this.allSelect(), this.noSelect(), list);
+            this.setCart(list[parseInt(index)].food_id, list[parseInt(index)].number);
         }
     },
     //编辑默认全不选
@@ -102,7 +104,7 @@ Page({
             if ( !list[i].active) {
                 continue;
             }
-            totalPrice = totalPrice + parseFloat( list[i].price );
+            totalPrice = totalPrice + parseFloat( list[i].price ) * list[i].number;
         }
         return totalPrice;
     },
@@ -117,8 +119,22 @@ Page({
     },
     //去结算
     toPayOrder: function () {
+        let data = {
+            type: "cart",
+            goods: []
+        }
+        let list = this.data.list;
+        list.forEach(v => {
+            if (v.active) {
+                data['goods'].push({
+                    id: v.food_id,
+                    price: v.price,
+                    number: v.number
+                })
+            }
+        })
         wx.navigateTo({
-            url: "/pages/order/index"
+            url: "/pages/order/index?data=" + JSON.stringify(data)
         });
     },
     //如果没有显示去光光按钮事件
@@ -129,16 +145,31 @@ Page({
     },
     //选中删除的数据
     deleteSelected: function () {
-        var list = this.data.list;
-        var cart_ids = [];
+        let list = this.data.list;
+        let goods = [];
         list = list.filter(function ( item ) {
-            if( !item.active ){
-                cart_ids.append( item.id );
+            if( item.active ){
+                goods.push({
+                    "id": item.food_id
+                } );
             }
             return !item.active;
         });
-        this.setPageData( this.getSaveHide(), this.totalPrice(), this.allSelect(), this.noSelect(), list);
+        let params = {
+            goods: JSON.stringify(goods)
+        }
+        fetch('POST', '/cart/del', params).then(res => {
+            this.setData({
+                // list:res.data.list,
+                // saveHidden: true,
+                // totalPrice: 0.00,
+                // allSelect: true,
+                // noSelect: false
+            })
+            this.setPageData( this.getSaveHide(), this.totalPrice(), this.allSelect(), this.noSelect(), list);
+        })
         //发送请求到后台删除数据
+     
     },
     getCartList: function () {
         fetch('GET', '/cart/index').then(res => {
@@ -150,6 +181,15 @@ Page({
                 noSelect: false
             })
              this.setPageData( this.getSaveHide(), this.totalPrice(), this.allSelect(), this.noSelect(), this.data.list);
+        })
+    },
+    setCart(food_id, number) {
+        let params = {
+            id: food_id,
+            number: number
+        }
+        fetch('POST', '/cart/set', params).then(res => {
+           
         })
     }
 });

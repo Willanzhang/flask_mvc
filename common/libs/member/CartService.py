@@ -4,11 +4,25 @@ import requests, json
 from application import app, db
 from common.models.member.MemberCart import MemberCart
 from common.libs.Helper import getCurrentDate
+from flask import jsonify
 
 class CartService(object):
+    @staticmethod
+    def deleteItem( member_id=0, items=None):
+        if member_id < 1 or not items:
+            return False
+
+        for item in items:
+            # 删除也要做 db.session.delete(model) 操作
+            model_cart = MemberCart.query.filter(MemberCart.food_id == item['id'], MemberCart.member_id == member_id)\
+                .first()
+            db.session.delete(model_cart)
+            db.session.commit()
+
+        return True
 
     @staticmethod
-    def setItems( member_id =0 , food_id = 0, number = 0):
+    def setItems(member_id=0, food_id=0, number=0):
         if member_id < 1 or food_id < 1 or number < 1:
             return False
 
