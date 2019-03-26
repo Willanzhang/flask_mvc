@@ -47,3 +47,24 @@ def orderInfo():
     resp['data']['total_price'] = str(pay_price + yun_price)
     resp['data']['default_address'] = default_address
     return jsonify(resp)
+
+@route_api.route("/order/create", methods=["POST"])
+def orderCreate():
+    resp = {'code': 200, 'msg': '操作成功~', 'data': {}}
+    req = request.values
+    type = req['type'] if 'type' in req else ''
+    params_goods = req['params_goods'] if 'params_goods' in req else None
+
+    if params_goods:
+        items = json.loads(params_goods)
+
+    if len(items) <1:
+        resp['code'] = -1
+        resp['msg'] = "下单失败：没有选择商品"
+        return jsonify(resp)
+
+    # 下单先在主表添加一个数据，再在副表添加数据
+
+
+
+    return jsonify(resp)
