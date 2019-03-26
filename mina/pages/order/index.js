@@ -1,46 +1,42 @@
 //获取应用实例
-var app = getApp();
-
+import { fetch } from '../../utils/util'
+let app = getApp();
 Page({
     data: {
-        goods_list: [
-            {
-                id:22,
-                name: "小鸡炖蘑菇",
-                price: "85.00",
-                pic_url: "/images/food.jpg",
-                number: 1,
-            },
-            {
-                id:22,
-                name: "小鸡炖蘑菇",
-                price: "85.00",
-                pic_url: "/images/food.jpg",
-                number: 1,
-            }
-        ],
-        default_address: {
-            name: "编程浪子",
-            mobile: "12345678901",
-            detail: "上海市浦东新区XX",
-        },
-        yun_price: "1.00",
-        pay_price: "85.00",
-        total_price: "86.00",
+        goods_list: [],
+        default_address: {},
+        yun_price: "",
+        pay_price: "",
+        total_price: "",
         params: null
     },
     onShow: function () {
         var that = this;
+        this.getOrderInfo()
+
     },
     onLoad: function (e) {
-        var that = this;
+        this.setData({
+            data: JSON.parse(e.data)
+        })
     },
     createOrder: function (e) {
-        wx.showLoading();
-        var that = this;
-        wx.navigateTo({
-            url: "/pages/my/order_list"
-        });
+        let params = {
+            type: this.data.data.type,
+            goods: JSON.stringify(this.data.data.goods)
+        }
+        fetch('POST', '/order/create', params).then(res => {
+            wx.hideLoading()
+            if (res.code !== 200) {
+                app.alert({
+                    content: res.msg
+                })
+                return
+            }
+            wx.navigateTo({
+                url: "/pages/my/order_list"
+            });
+        })
     },
     addressSet: function () {
         wx.navigateTo({
@@ -51,6 +47,28 @@ Page({
         wx.navigateTo({
             url: "/pages/my/addressList"
         });
+    },
+    getOrderInfo() {
+        let params = {
+            type: this.data.data.type,
+            goods: JSON.stringify(this.data.data.goods)
+        }
+        
+        fetch('POST', '/order/info', params).then(res => {
+            if(res.code !== 200) {
+                app.alert({
+                    content: res.msg
+                })
+                return;
+            }
+            this.setData({
+                goods_list: res.data.food_list,
+                default_address: res.data.default_address,
+                yun_price: res.data.yun_price,
+                pay_price: res.data.pay_price,
+                total_price: res.data.total_price,
+            })
+        })
     }
 
 });
