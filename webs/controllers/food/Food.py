@@ -6,6 +6,7 @@ from common.models.food.Food import Food
 from common.models.food.FoodStockChangeLog import FoodStockChangeLog
 from common.libs.Helper import getCurrentDate, iPagination, getDictFilterField
 from common.libs.UrlManager import UrlManager
+from common.libs.food.FoodService import FoodService
 from application import app, db
 from sqlalchemy import or_
 
@@ -165,15 +166,17 @@ def set():
     db.session.commit()
 
     # 库存变更表操作
-    model_stock_change = FoodStockChangeLog()
-    model_stock_change.food_id = model_food.id
-    # 变更的库存
-    model_stock_change.unit = int(stock) - int(before_stock)
-    model_stock_change.total_stock = stock
-    model_stock_change.note = ''
-    model_stock_change.created_time = getCurrentDate()
-    db.session.add(model_stock_change)
-    db.session.commit()
+    # model_stock_change = FoodStockChangeLog()
+    # model_stock_change.food_id = model_food.id
+    # # 变更的库存
+    # model_stock_change.unit = int(stock) - int(before_stock)
+    # model_stock_change.total_stock = stock
+    # model_stock_change.note = ''
+    # model_stock_change.created_time = getCurrentDate()
+    # db.session.add(model_stock_change)
+    # db.session.commit()
+    # 封装如下
+    FoodService.setStockChangeLog(model_food.id, int(stock) - int(before_stock), "后台修改")
 
     return jsonify(resp)
 

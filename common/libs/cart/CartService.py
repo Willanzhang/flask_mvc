@@ -4,7 +4,6 @@ import requests, json
 from application import app, db
 from common.models.member.MemberCart import MemberCart
 from common.libs.Helper import getCurrentDate
-from flask import jsonify
 
 class CartService(object):
     @staticmethod
@@ -13,11 +12,13 @@ class CartService(object):
             return False
 
         for item in items:
-            # 删除也要做 db.session.delete(model) 操作
-            model_cart = MemberCart.query.filter(MemberCart.food_id == item['id'], MemberCart.member_id == member_id)\
-                .first()
-            db.session.delete(model_cart)
-            db.session.commit()
+            # 删除也要做 db.session.delete(model) 操作  这样操作又无效了， 改为如下操作 注意 commmit 的层级
+            # model_cart = MemberCart.query.filter(MemberCart.food_id == item['id'], MemberCart.member_id == member_id)\
+            #     .first()
+            MemberCart.query.filter_by(food_id=item['id'], member_id=member_id).delete()
+
+        # db.session.delete(model_cart)
+        db.session.commit()
 
         return True
 

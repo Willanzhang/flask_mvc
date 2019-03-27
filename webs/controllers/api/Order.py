@@ -3,7 +3,9 @@ from webs.controllers.api import route_api
 from flask import request, jsonify, g
 from common.models.food.Food import Food
 from common.libs.UrlManager import UrlManager
-import json, decimal
+from common.libs.pay.PayService import PayService
+from common.libs.cart.CartService import CartService
+import json,decimal
 
 @route_api.route("/order/info", methods=["POST"])
 def orderInfo():
@@ -53,7 +55,7 @@ def orderCreate():
     resp = {'code': 200, 'msg': '操作成功~', 'data': {}}
     req = request.values
     type = req['type'] if 'type' in req else ''
-    params_goods = req['params_goods'] if 'params_goods' in req else None
+    params_goods = req['goods'] if 'goods' in req else None
 
     if params_goods:
         items = json.loads(params_goods)
@@ -65,6 +67,13 @@ def orderCreate():
 
     # 下单先在主表添加一个数据，再在副表添加数据
 
+    member_info = g.member_info
+    params = {}
+    target = PayService()
+    resp = target.createOrder(member_info.id, items, params)
 
-
+    if resp['code'] == 200 and type == "cart":
+        CartService.deleteItem(member_info.id, items)
+    print('------------------')
+    print(resp)
     return jsonify(resp)

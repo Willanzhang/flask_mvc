@@ -3,11 +3,11 @@ from webs.controllers.api import route_api
 from flask import request, jsonify, g
 from common.models.food.Food import Food
 from common.models.member.MemberCart import MemberCart
-from common.libs.member.CartService import CartService
+from common.libs.cart.CartService import CartService
 from common.libs.Helper import selectFilterObj, getDictFilterField
 from common.libs.UrlManager import UrlManager
 import json
-from application import app
+
 
 @route_api.route("/cart/index")
 def cartIndex():
