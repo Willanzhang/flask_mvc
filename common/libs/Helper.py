@@ -69,9 +69,9 @@ def getCurrentDate(format="%Y-%m-%d %H:%M:%S"):
 根据某个字段获取一个dic出来   
 getDictFilterField(Food, Food.id, 'id', food_ids)
 在 food 变表中 通过id字段查询   id字段在food_ids中， 
-[
+{
     id的值： item,
-] 
+}
 '''
 def getDictFilterField( db_model, select_field, key_field, id_list):
     ret = {}

@@ -1,4 +1,5 @@
-var app = getApp();
+import { fetch } from '../../utils/util'
+let app = getApp();
 Page({
     data: {
         statusType: ["待付款", "待发货", "待收货", "待评价", "已完成","已关闭"],
@@ -27,27 +28,7 @@ Page({
         // 生命周期函数--监听页面初次渲染完
     },
     onShow: function () {
-        var that = this;
-        that.setData({
-            order_list: [
-                {
-					status: -8,
-                    status_desc: "待支付",
-                    date: "2018-07-01 22:30:23",
-                    order_number: "20180701223023001",
-                    note: "记得周六发货",
-                    total_price: "85.00",
-                    goods_list: [
-                        {
-                            pic_url: "/images/food.jpg"
-                        },
-                        {
-                            pic_url: "/images/food.jpg"
-                        }
-                    ]
-                }
-            ]
-        });
+        this.getPayOrder()
     },
     onHide: function () {
         // 生命周期函数--监听页面隐藏
@@ -64,5 +45,21 @@ Page({
     onReachBottom: function () {
         // 页面上拉触底事件的处理函数
 
+    },
+    getPayOrder () {
+        let params = {
+            status: this.data.status[this.data.currentType]
+        }
+        fetch('POST', '/my/order', params).then(res => {
+            if(res.code !== 200) {
+                app.alert({
+                    content: res.msg
+                })
+                return;
+            }
+            this.setData({
+                order_list: res.data.pay_order_list
+            })
+        })
     }
 })
