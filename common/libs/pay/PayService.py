@@ -3,6 +3,7 @@ from application import app, db
 from common.models.food.Food import Food
 from common.models.pay.PayOrder import PayOrder
 from common.models.pay.PayOrderCallbackData import PayOrderCallbackDatum
+from common.models.food.FoodSaleChangeLog import FoodSaleChangeLog
 from common.models.pay.PayOrderItem import PayOrderItem
 from common.libs.Helper import getCurrentDate
 from common.libs.food.FoodService import FoodService
@@ -36,7 +37,6 @@ class PayService():
 
         yun_price = params['yun_price'] if params and 'yun_price' in params else 0
         note = params['note'] if params and 'note' in params else ''
-        print(note, '1111111111111111111')
         yun_price = decimal.Decimal(yun_price)
         total_price = pay_price + yun_price
 
@@ -91,9 +91,7 @@ class PayService():
                 tmp_pay_item.created_time = tmp_pay_item.updated_time = getCurrentDate()
                 db.session.add(tmp_pay_item)
                 # 库存变更操作
-                print('11111111111111')
                 FoodService.setStockChangeLog(item['id'], -int(item['number']), "在线购买")
-                print('88888888888888888')
             db.session.commit()
             resp['data'] = {
                 "id": model_pay_order.id,
@@ -110,9 +108,61 @@ class PayService():
             resp['msg'] = str(e)
             pass
 
-
-        print('999999999999999999')
         return resp
+
+    def orderSuccess(self, pay_order_id=0, params=None):
+        '''
+        订单付款成功后的操作
+        status 变为1 支付成功
+        express_status 为-7  付款待发货
+        改变销售订单
+        :param pay_order_id:
+        :param params:
+        :return:
+        '''
+        try:
+            pay_order_info = PayOrder.query.filter(id=pay_order_id).first()
+            if not pay_order_info or pay_order_info.status not in [-8, -7]:
+                return False
+
+            pay_order_info.pay_sn = params['pay_sn'] if params and 'pay_sn' in params else ''
+            pay_order_info.status = 1
+            pay_order_info.express_status = -7
+            pay_order_info.pay_time = getCurrentDate()
+            pay_order_info.updated_time = getCurrentDate
+            db.session.add(pay_order_info)
+
+            # 插入售卖记录 进行统计
+            pay_order_items = PayOrderItem.query.filter_by(pay_order_id=pay_order_id).all()
+            for order_item in pay_order_items:
+                tmp_model_sale_log = FoodSaleChangeLog()
+                tmp_model_sale_log.id = order_item.food_id
+                tmp_model_sale_log.quantity = order_item.quantity
+                tmp_model_sale_log.price = order_item.price
+                tmp_model_sale_log.member_id = order_item.member_id
+                tmp_model_sale_log.created_time = getCurrentDate()
+                db.session.add(tmp_model_sale_log)
+
+            db.session.commit()
+
+        except Exception as e:
+            db.session.rollback()
+            return False
+
+    def addPayCallbackData(self, pay_order_id=0, type='pay', data=None):
+        model_callback = PayOrderCallbackDatum()
+        model_callback.pay_order_id = pay_order_id
+        if type == "pay":
+            model_callback.pay_data = data
+            model_callback.refund_data = ''
+        else:
+            model_callback.pay_data = ''
+            model_callback.refund_data = data
+
+        model_callback.created_time = model_callback.updated_time = getCurrentDate()
+        db.session.add(model_callback)
+        db.session.commit()
+        return True
 
     def geneOrder(self):
         m = hashlib.md5()

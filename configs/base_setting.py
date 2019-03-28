@@ -34,11 +34,18 @@ STATUS_MAPPING = {
 
 '''
 小程序配置
+paykey 商户秘钥
+mch_id 商户id
+callback_url  微信的回调地址
 '''
 MINA_APP = {
     'appid': 'wxe3445334e3277c73',
-    'appkey': 'e280d207de19a46caef2c1eb16e32bf5'
+    'appkey': 'e280d207de19a46caef2c1eb16e32bf5',
+    'paykey': 'e2bbfbedda23',
+    'mch_id': '1443337302',
+    'callback_url': 'api/order/callback'
 }
+
 
 UPLOAD = {
     'ext': ['jpg', 'gif', 'bmp', 'jpeg', 'png'],

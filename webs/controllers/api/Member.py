@@ -2,7 +2,6 @@
 from webs.controllers.api import route_api
 from flask import request, jsonify, g
 from application import app, db
-import requests, json
 from common.models.member.member import Member
 from common.models.member.oauth_member_bind import OauthMemberBind
 from common.models.food.WxShareHistory import WxShareHistory

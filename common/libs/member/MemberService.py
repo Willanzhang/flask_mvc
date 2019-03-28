@@ -27,5 +27,6 @@ class MemberService(object):
         openid = None
         if 'openid' in res:
             openid = res['openid']
+
         return openid
 

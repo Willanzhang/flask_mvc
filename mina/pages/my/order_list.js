@@ -61,5 +61,28 @@ Page({
                 order_list: res.data.pay_order_list
             })
         })
+    },
+    toPay (e) {
+        let params = {
+            order_sn: e.currentTarget.dataset.id
+        }
+        fetch('POST', '/order/pay', params).then(res => {
+            if(res.code !== 200) {
+                app.alert({
+                    content: res.msg
+                })
+                return;
+            }
+            let pay_info = res.data.pay_info
+            wx.requestPayment({
+                timeStamp: pay_info.timeStamp,
+                nonceStr: pay_info.nonceStr,
+                package: pay_info.package,
+                signType: 'MD5',
+                paySign: pay_info.paySign,
+                success(res) { },
+                fail(res) { }
+              })
+        })
     }
 })

@@ -2,9 +2,13 @@
 from webs.controllers.api import route_api
 from flask import request, jsonify, g
 from common.models.food.Food import Food
+from common.models.pay.PayOrder import PayOrder
+from common.models.member.oauth_member_bind import OauthMemberBind
 from common.libs.UrlManager import UrlManager
 from common.libs.pay.PayService import PayService
 from common.libs.cart.CartService import CartService
+from application import app, db
+from common.libs.pay.WeChatService import WeChatService
 import json,decimal
 
 @route_api.route("/order/info", methods=["POST"])
@@ -74,6 +78,95 @@ def orderCreate():
 
     if resp['code'] == 200 and type == "cart":
         CartService.deleteItem(member_info.id, items)
-    print('------------------')
-    print(resp)
+
     return jsonify(resp)
+
+@route_api.route("/order/pay", methods=["POST"])
+def orderPay():
+    resp = {'code': 200, 'msg': '操作成功~', 'data': {}}
+    member_info = g.member_info
+    req = request.values
+    order_sn = req['order_sn'] if 'order_sn' in req else ''
+    pay_order_info = PayOrder.query.filter_by(order_sn=order_sn).first()
+    if not pay_order_info:
+        resp['code'] = -1
+        resp['msg'] = "系统繁忙，请稍后再试"
+        return jsonify(resp)
+
+    oauth_bind_info = OauthMemberBind.query.filter_by(member_id=member_info.id).first()
+    if not oauth_bind_info:
+        resp['code'] = -1
+        resp['msg'] = "系统繁忙，请稍后再试"
+        return jsonify(resp)
+
+    config_mina = app.config["MINA_APP"]
+
+    # 支付完后 wechat 会调取我们的回调接口， 解析后我们能获取支付状态
+    notify_url = app.config['APP']['domain'] + config_mina['callback_url']
+    target_wechat = WeChatService(merchant_key=config_mina['paykey'])
+    data = {
+        "appid": config_mina['appid'],
+        "mch_id": config_mina['mch_id'],
+        "nonce_str": target_wechat.get_nonce_str(),
+        "body": "订餐",
+        "out_trade_no": pay_order_info.order_sn,
+        "total_fee": int(pay_order_info.total_price * 100),
+        "notify_url": notify_url,
+        "trade_type": "JSAPI",
+        "openid": oauth_bind_info.openid
+    }
+    pay_info = target_wechat.get_pay_info(data)
+
+    if pay_info:
+        #保存prepay_id 为后面发模板消息
+        pay_order_info.prepay_id = pay_info['prepay_id']
+
+        db.session.add(pay_order_info)
+        db.session.commit()
+
+        resp['data']['pay_info'] = pay_info
+
+    return jsonify(resp)
+
+# 支付后微信返回结果 在此处理  判断是否是此系统订单，金额是否对
+@route_api.route("/order/callback", methods=["POST"])
+def orderCallback():
+    result_data = {
+        'return_code': 'SUCCESS',
+        'return_msg': 'OK'
+    }
+    header = {'Content-Type': 'application/xml'}
+    config_mina = app.config['MINA_APP']
+    target_wechat = WeChatService(merchant_key=config_mina['paykey'])
+    callback_data = target_wechat.xml_to_dict(request.data)
+    # 对比sign 值 防止伪造
+    sign = callback_data['sign']
+    callback_data.pop('sign')
+    gene_sign = target_wechat.create_sign(callback_data)
+    if sign != gene_sign:
+        result_data['return_code'] = result_data['return_msg'] = "FAIL"
+        return target_wechat.dict_to_xml(result_data),header
+
+    order_sn = callback_data['out_trade_no']
+    # 非法订单
+    pay_order_info = PayOrder.query.filter_by(order_sn=order_sn).first()
+    if not pay_order_info:
+        result_data['return_code'] = result_data['return_msg'] = "FAIL"
+        return target_wechat.dict_to_xml(result_data),header
+
+    # 订单金额对不上
+    if int(pay_order_info.total_price * 100) != int(callback_data['total_fee']):
+        result_data['return_code'] = result_data['return_msg'] = "FAIL"
+        return target_wechat.dict_to_xml(result_data), header
+    # 订单是处理过的订单
+    if pay_order_info.status == 1:
+        return target_wechat.dict_to_xml(result_data), header
+
+    # 进行支付成功我方数据库处理
+    target_pay = PayService()
+    target_pay.orderSuccess(pay_order_id=pay_order_info.id, params={'pay_sn': callback_data['transaction_id']})
+
+    # 将微信回调的结果放入记录表
+    target_pay.addPayCallbackData(pay_order_id=pay_order_info.id, data=request.data)
+
+    return target_wechat
