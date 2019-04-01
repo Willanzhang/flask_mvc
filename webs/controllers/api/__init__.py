@@ -7,6 +7,7 @@ from webs.controllers.api.Food import *
 from webs.controllers.api.Cart import *
 from webs.controllers.api.Order import *
 from webs.controllers.api.My import *
+from webs.controllers.api.Address import *
 
 @route_api.route("/")
 def index():

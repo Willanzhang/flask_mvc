@@ -2,7 +2,7 @@
 from webs.controllers.api import route_api
 from flask import request, jsonify, g
 from common.models.food.Food import Food
-from common.models.member.MemberCart import MemberCart
+from common.models.member.MemberComments import MemberComment
 from common.models.pay.PayOrder import PayOrder
 from common.models.pay.PayOrderItem import PayOrderItem
 from common.libs.Helper import selectFilterObj, getDictFilterField
@@ -72,3 +72,34 @@ def myOrderList():
 	resp['data']['pay_order_list'] = data_pay_order_list
 	return jsonify(resp)
 
+
+@route_api.route("/my/comment/list")
+def myCommentList():
+	resp = {'code': 200, 'msg': '操作成功~', 'data': {}}
+	req = request.values
+	p = int(req['p']) if 'p' in req else 0
+	page_size = int(req['size']) if 'size' in req else 10
+
+	if p < 1:
+		p = 1
+
+	offset = (p-1) * page_size
+
+	member_info = g.member_info
+	comment_list = MemberComment.query.filter_by(member_id=member_info.id)\
+		.order_by(MemberComment.id.desc()).offset(offset).limit(page_size).all()
+	data_comment_list = []
+	if comment_list:
+		pay_order_ids = selectFilterObj(comment_list, 'pay_order_id')
+		pay_order_map = getDictFilterField(PayOrder, PayOrder.id, 'id', pay_order_ids)
+		for item in comment_list:
+			tmp_pay_order_info = pay_order_map[item.pay_order_id]
+			tmp_data = {
+				"date": item.created_time.strftime("%Y-%m-%d %H:%M:%S"),
+				"content": item.content,
+				"order_number": tmp_pay_order_info.order_number
+			}
+			data_comment_list.append(tmp_data)
+	resp['data']['list'] = data_comment_list
+	resp['data']['has_more'] = 0 if len(data_comment_list) < page_size else 1
+	return jsonify(resp)

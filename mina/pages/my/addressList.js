@@ -1,36 +1,47 @@
+import { fetch } from '../../utils/util'
 //获取应用实例
 var app = getApp();
 Page({
     data: {
-        addressList: []
+        list: []
+    },
+    onShow: function () {
+        this.getList()
     },
     selectTap: function (e) {
         //从商品详情下单选择地址之后返回
-        wx.navigateBack({});
-    },
-    addessSet: function (e) {
-        wx.navigateTo({
-            url: "/pages/my/addressSet"
+        let params = {
+            id: e.currentTarget.dataset.id,
+            act: 'default'
+        }
+        fetch('POST', '/my/address/ops', params).then(res => {
+            if(res.code !== 200) {
+                app.alert({
+                    content: res.msg
+                })
+            }
+            // this.setData({
+            //     list: res.data.list
+            // })
+            wx.navigateBack({});
         })
     },
-    onShow: function () {
-        var that = this;
-        that.setData({
-            addressList: [
-                {
-                    id:1,
-                    name: "编程浪子",
-                    mobile: "12345678901",
-                    detail: "上海市浦东新区XX",
-                    isDefault: 1
-                },
-                {
-                    id: 2,
-                    name: "编程浪子888",
-                    mobile: "12345678901",
-                    detail: "上海市浦东新区XX"
-                }
-            ]
-        });
+    addressSet: function (e) {
+        wx.navigateTo({
+            url: "/pages/my/addressSet?id=" + e.currentTarget.dataset.id
+        })
+    },
+    getList() {
+        fetch('GET', '/my/address/index').then(res => {
+            if(res.code !== 200) {
+                app.alert({
+                    content: res.msg
+                })
+            }
+            this.setData({
+                list: res.data.list
+            })
+        })
     }
+
 });

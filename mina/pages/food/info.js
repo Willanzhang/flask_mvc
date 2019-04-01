@@ -179,7 +179,9 @@ Page({
                 })
                 WxParse.wxParse('article', 'html', this.data.info.summary, this, 5)
             } else {
-                app.alert(res.data.msg)
+                app.alert({
+                    content: res.msg
+                })
             }
         })
     }
