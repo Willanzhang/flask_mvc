@@ -57,6 +57,12 @@ APP = {
     'domain': 'http://127.0.0.1:5000'
 }
 
+PAY_STATUS_MAPING = {
+    '1': '已支付',
+    '-8': '待支付',
+    '0': '已关闭'
+}
+
 PAY_STATUS_DISPLAY_MAPPING = {
     '0': "订单关闭",
     '1': "支付成功",
