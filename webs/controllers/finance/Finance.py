@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from flask import Blueprint, request
+from flask import Blueprint, request, jsonify
 # 引入统一渲染方法
 from common.models.pay.PayOrder import PayOrder
-from common.models.pay.Food import Food
+from common.models.food.Food import Food
 from common.models.pay.PayOrderItem import PayOrderItem
 from common.libs.Helper import ops_render
 from common.libs.Helper import iPagination, selectFilterObj, getDictFilterField, getDictListFilterField
@@ -26,19 +26,24 @@ def index():
         'page_size': app.config['PAGE_SIZE'],
         'page': page,
         'display': app.config['PAGE_DISPLAY'],
-        'url': request.full_path.replace("&p={0}".foramt(page), '')
+        'url': request.full_path.replace("&p={0}".format(page), '')
     }
 
     pages = iPagination(page_params)
     offset = (page - 1) * app.config['PAGE_SIZE']
+
+    # 查询订单表
     pay_list = query.order_by(PayOrder.id.desc()).offset(offset).limit(app.config['PAGE_SIZE']).all()
+
     data_list = []
     if pay_list:
+        # [id, ...ids]
         pay_order_ids = selectFilterObj(pay_list, 'id')
 
-        pay_order_items_map = getDictListFilterField(PayOrderItem, PayOrderItem.pay_order_id, 'pay_order_id', pay_order_ids)
-
-
+        # {id_value: [item, item]}
+        pay_order_items_map = getDictListFilterField(PayOrderItem,
+                                                     PayOrderItem.pay_order_id, 'pay_order_id', pay_order_ids)
+        #
         food_mapping = {}
 
         if pay_order_items_map:
@@ -49,7 +54,8 @@ def index():
                 tmp_food_ids = {}.fromkeys(tmp_food_ids).keys()
                 food_ids = food_ids + list(tmp_food_ids)
 
-            # food_ids里面还有重复的， 要去重
+            # food_ids里面还有重复的， 要去重   food_ids 在这实际上就是根据pay_order 查询的pay_order_item中所有的食品
+            # 单数再去重
             food_mapping = getDictFilterField(Food, Food.id, 'id', food_ids)
 
         for item in pay_list:
@@ -57,7 +63,7 @@ def index():
                 "id": item.id,
                 "status_desc": item.status_desc,
                 "order_number": item.order_number,
-                "price": item.total_price,
+                "price": str(item.total_price),
                 "pay_time": item.pay_time,
                 "created_time": item.created_time.strftime("%Y%m%d%H%M%S")
             }
@@ -78,7 +84,6 @@ def index():
     resp_data['search_con'] = req
     resp_data['pay_status_mapping'] = app.config['PAY_STATUS_MAPPING']
     resp_data['current'] = 'index'
-
     return ops_render("finance/index.html", resp_data)
 
 
