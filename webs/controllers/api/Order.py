@@ -4,6 +4,7 @@ from flask import request, jsonify, g
 from common.models.food.Food import Food
 from common.models.pay.PayOrder import PayOrder
 from common.models.member.oauth_member_bind import OauthMemberBind
+from common.models.member.MemberAddress import MemberAddress
 from common.libs.UrlManager import UrlManager
 from common.libs.pay.PayService import PayService
 from common.libs.cart.CartService import CartService
@@ -41,12 +42,15 @@ def orderInfo():
             }
             pay_price = pay_price + item.price * int(food_dic[item.id])
             data_food_list.append(tem_data)
-    default_address = {
-        "name": "这是一个大帅哥",
-        "mobile": "1567788221",
-        "address": "深圳市南山区XX",
-    }
 
+    address_info = MemberAddress.query.filter_by(is_default=1).first()
+    default_address = {
+        "name": address_info.nickname,
+        "mobile": address_info.mobile,
+        "address": "%s,%s,%s,%s" % (address_info.province_str, address_info.city_str, address_info.area_str,
+                                    address_info.address),
+    }
+    print('----------', default_address)
     resp['data']['food_list'] = data_food_list
     resp['data']['pay_price'] = str(pay_price)
     resp['data']['yun_price'] = str(yun_price)

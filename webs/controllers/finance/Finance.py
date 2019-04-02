@@ -1,12 +1,17 @@
 # -*- coding: utf-8 -*-
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, redirect, jsonify
 # 引入统一渲染方法
 from common.models.pay.PayOrder import PayOrder
 from common.models.food.Food import Food
 from common.models.pay.PayOrderItem import PayOrderItem
+from common.models.member.member import Member
 from common.libs.Helper import ops_render
 from common.libs.Helper import iPagination, selectFilterObj, getDictFilterField, getDictListFilterField
+from common.libs.UrlManager import UrlManager
+from common.libs.Helper import getCurrentDate
 from application import app, db
+from sqlalchemy import func
+import json
 
 route_finance = Blueprint( 'finance_page',__name__ )
 
@@ -89,8 +94,93 @@ def index():
 
 @route_finance.route( "/pay-info" )
 def payInfo():
-    return ops_render( "finance/pay_info.html" )
+    resp_data = {}
+    req = request.values
+    id = int(req['id']) if 'id' in req else 0
+
+    reback_url = UrlManager.buildUrl("/finance/index")
+
+    if id < 1:
+        return redirect( reback_url )
+
+    pay_order_info = PayOrder.query.filter_by( id = id ).first()
+    if not pay_order_info:
+        return redirect(reback_url)
+
+    member_info = Member.query.filter_by( id = pay_order_info.member_id ).first()
+    if not member_info:
+        return redirect(reback_url)
+
+    order_item_list = PayOrderItem.query.filter_by( pay_order_id = pay_order_info.id ).all()
+    data_order_item_list = []
+    if order_item_list:
+        food_map = getDictFilterField(Food, Food.id, "id", selectFilterObj(order_item_list, "food_id"))
+        for item in order_item_list:
+            tmp_food_info = food_map[item.food_id]
+            tmp_data = {
+                "quantity": item.quantity,
+                "price": item.price,
+                "name": tmp_food_info.name
+            }
+            data_order_item_list.append(tmp_data)
+
+    address_info = {}
+    if pay_order_info.express_info:
+        address_info = json.loads(pay_order_info.express_info)
+
+    resp_data['pay_order_info'] = pay_order_info
+    resp_data['pay_order_items'] = data_order_item_list
+    resp_data['member_info'] = member_info
+    resp_data['address_info'] = address_info
+    resp_data['current'] = 'index'
+    return ops_render("finance/pay_info.html", resp_data)
 
 @route_finance.route( "/account" )
 def account():
-    return ops_render( "finance/account.html" )
+    resp_data = {}
+    req = request.values
+    page = int(req['p']) if ('p' in req and req['p']) else 1
+    query = PayOrder.query.filter_by( status = 1 )
+
+    page_params = {
+        'total': query.count(),
+        'page_size': app.config['PAGE_SIZE'],
+        'page': page,
+        'display': app.config['PAGE_DISPLAY'],
+        'url': request.full_path.replace("&p={}".format(page), "")
+    }
+
+    pages = iPagination(page_params)
+    offset = (page - 1) * app.config['PAGE_SIZE']
+    list = query.order_by(PayOrder.id.desc()).offset(offset).limit(app.config['PAGE_SIZE']).all()
+
+    stat_info = db.session.query(PayOrder, func.sum(PayOrder.total_price).label("total"))\
+        .filter(PayOrder.status == 1).first()
+
+    app.logger.info(stat_info)
+    resp_data['list'] = list
+    resp_data['pages'] = pages
+    resp_data['total_money'] = stat_info[1] if stat_info[1] else 0.00
+    resp_data['current'] = 'account'
+    return ops_render("finance/account.html", resp_data)
+
+@route_finance.route("/ops", methods=['POST'] )
+def orderOps():
+    resp = {'code': 200, 'msg': '操作成功~', 'data': {}}
+    req = request.values
+    id = req['id'] if 'id' in req else 0
+    act = req['act'] if 'act' in req else ''
+    pay_order_info = PayOrder.query.filter_by(id=id).first()
+    if not pay_order_info:
+        resp['code'] = -1
+        resp['msg'] = "系统繁忙。请稍后再试~~"
+        return jsonify(resp)
+
+    if act == "express":
+        pay_order_info.express_status = -6
+        pay_order_info.updated_time = getCurrentDate()
+        db.session.add(pay_order_info)
+        db.session.commit()
+        return jsonify(resp)
+
+
