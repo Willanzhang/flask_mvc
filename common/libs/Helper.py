@@ -124,3 +124,12 @@ def getDictListFilterField( db_model, select_field, key_field, id_list):
             ret[getattr(item, key_field)] = []
         ret[getattr(item, key_field)].append(item)
     return ret
+
+'''
+获取格式化的时间
+'''
+def getFormatDate(date=None, format="%Y-%m-%d %H:%M:%S"):
+    if date is None:
+        date = datetime.datetime.now()
+
+    return date.strftime(format)
