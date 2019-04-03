@@ -92,7 +92,7 @@ class JobTask():
 			tmp_model_stat_member.updated_time = getCurrentDate()
 			db.session.add(tmp_model_stat_member)
 			db.session.commit()
-		return
+		return True
 
 	'''
 	商品售卖统计
@@ -131,13 +131,13 @@ class JobTask():
 			'''
 			为了测试效果模拟数据
 			'''
-			tmp_model_stat_food.total_shared_count = random.randint(50, 100)
-			tmp_model_stat_food.total_pay_money = random.randint(1000, 1010)
+			# tmp_model_stat_food.total_shared_count = random.randint(50, 100)
+			# tmp_model_stat_food.total_pay_money = random.randint(1000, 1010)
 
 			tmp_model_stat_food.updated_time = getCurrentDate()
 			db.session.add(tmp_model_stat_food)
 			db.session.commit()
-		return
+		return True
 
 	'''
 	全站统计

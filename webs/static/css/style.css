@@ -45,12 +45,12 @@ h5 {
   color: #999c9e;
 }
 .nav > li.active > a {
-  color: #ffffff;
+  color: #1890ff;
 }
 .navbar-default .nav > li > a:hover,
 .navbar-default .nav > li > a:focus {
-  background-color: #293846;
-  color: white;
+  background-color: #fff;
+  color: #1890ff;
 }
 .nav .open > a,
 .nav .open > a:hover,
@@ -164,8 +164,8 @@ h5 {
   transition: all 0.4s;
 }
 .nav > li.active {
-  border-left: 4px solid #19aa8d;
-  background: #293846;
+  border-left: 4px solid #1890ff;
+  background: #e6f7ff;
 }
 .nav.nav-second-level > li.active {
   border: none;
@@ -329,6 +329,7 @@ body.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
 body.fixed-nav #wrapper .navbar-static-side,
 body.fixed-nav #wrapper #page-wrapper {
   margin-top: 60px;
+  /*border-left: 1px solid #f3f3f3;*/
 }
 body.top-navigation.fixed-nav #wrapper #page-wrapper {
   margin-top: 0;
@@ -505,7 +506,7 @@ body.canvas-menu.mini-navbar nav.navbar-static-side {
   border: none;
 }
 .top-navigation .nav > li.active > a {
-  color: #1ab394;
+  color: #1890ff;
 }
 .top-navigation .navbar-right {
   margin-right: 10px;
@@ -3301,7 +3302,7 @@ body.tour-open .animated {
 }
 body {
   font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #2f4050;
+  background-color: #fff;
   font-size: 13px;
   color: #676a6c;
   overflow-x: hidden;
@@ -3316,6 +3317,7 @@ body.full-height-layout #page-wrapper {
 }
 #page-wrapper {
   min-height: auto;
+  border-left: 1px solid #f3f3f3 !important;
 }
 body.boxed-layout {
   background: url('patterns/shattered.png');
@@ -5199,7 +5201,7 @@ table.issue-tracker tbody tr td {
 }
 .agile-list li:hover {
   cursor: pointer;
-  background: #fff;
+  background: #1890ff;
 }
 .agile-list li.warning-element {
   border-left: 3px solid #f8ac59;
