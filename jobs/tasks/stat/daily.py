@@ -9,9 +9,9 @@ from common.models.stat.StatDailySite import StatDailySite
 from common.models.food.WxShareHistory import WxShareHistory
 from common.models.food.FoodSaleChangeLog import FoodSaleChangeLog
 from sqlalchemy import func
-import random
+import random, datetime
 '''
-python manager.py runjob -m stat/daily -a member | food | site -p 2019-04-06      # 不传默认是当天
+python manager.py runjob -m stat/daily -a member | food | site | test [-p 2019-04-06]      # 不传默认是当天
 '''
 
 
@@ -40,7 +40,9 @@ class JobTask():
 		elif act == 'food':
 			self.statFood(func_params)
 		elif act == 'site':
-			pass
+			self.statSite(func_params)
+		elif act == 'test':
+			self.test()
 
 	'''
 	会员统计
@@ -133,4 +135,67 @@ class JobTask():
 			db.session.add(tmp_model_stat_food)
 			db.session.commit()
 		return
+
+	'''
+	全站统计
+	'''
+	def statSite(self, params):
+		date = params['date']
+		date_from = params['date_from']
+		date_to = params['date_to']
+		act = params['act']
+		app.logger.info("act:{0}, from:{1}, to:{2}".format(act, date_from, date_to))
+
+		stat_pay = db.session.query(func.sum(PayOrder.total_price).label('total_pay_price'))\
+			.filter(PayOrder.status == 1)\
+			.filter(PayOrder.created_time >= date_from, PayOrder.created_time <= date_to)\
+			.first()
+
+		stat_member_count = Member.query.count()
+		stat_new_member_count = Member.query.filter(Member.created_time >= date_from, Member.created_time <= date_to)\
+			.count()
+		stat_order_count = PayOrder.query.filter_by(status=1)\
+			.filter(PayOrder.created_time >= date_from, PayOrder.created_time <= date_to)\
+			.count()
+		stat_share_count = WxShareHistory.query\
+			.filter(WxShareHistory.created_time >= date_from, WxShareHistory.created_time <= date_to)\
+			.count()
+
+		tmp_stat_site = StatDailySite.query.filter_by(date=date).first()
+		if tmp_stat_site:
+			tmp_model_stat_site = tmp_stat_site
+		else:
+			tmp_model_stat_site = StatDailySite()
+			tmp_model_stat_site.date = date
+			tmp_model_stat_site.created_time = getCurrentDate()
+
+		tmp_model_stat_site.total_pay_money = stat_pay[0] if stat_pay[0] else 0.00
+		tmp_model_stat_site.total_new_member_count = stat_new_member_count
+		tmp_model_stat_site.total_member_count = stat_member_count
+		tmp_model_stat_site.total_order_count = stat_order_count
+		tmp_model_stat_site.total_shared_count = stat_share_count
+		tmp_model_stat_site.updated_time = getCurrentDate()
+		db.session.add(tmp_model_stat_site)
+		db.session.commit()
+
+		return True
+
+	'''
+	初始化  即补充之前的空缺的统计数据
+	'''
+	def test(self):
+		# 跑30天内的
+		now = datetime.datetime.now()
+		for i in reversed(range(1, 30)):
+			dete_before = now + datetime.timedelta(days=-i)
+			date = getFormatDate(date=dete_before, format="%Y-%m-%d")
+			tmp_params = {
+				'act': 'test',
+				'date': date,
+				'date_from': date + " 00:00:00",
+				'date_to': date + " 23:59:59",
+			}
+			self.statFood(tmp_params)
+			self.statMember(tmp_params)
+			self.statSite(tmp_params)
 
