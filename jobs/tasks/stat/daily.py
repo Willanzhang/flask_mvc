@@ -86,8 +86,9 @@ class JobTask():
 			'''
 			为了测试效果模拟数据
 			'''
-			# tmp_model_stat_member.total_shared_count = random.randint(50, 100)
-			# tmp_model_stat_member.total_pay_money = random.randint(1000, 1010)
+			tmp_model_stat_member.total_shared_count = random.randint(50, 100)
+			tmp_model_stat_member.total_pay_money = random.randint(1000, 1010)
+
 			tmp_model_stat_member.updated_time = getCurrentDate()
 			db.session.add(tmp_model_stat_member)
 			db.session.commit()
@@ -126,11 +127,13 @@ class JobTask():
 
 			tmp_model_stat_food.total_count = item[1]
 			tmp_model_stat_food.total_pay_money = item[2]
+
 			'''
 			为了测试效果模拟数据
 			'''
-			# tmp_model_stat_food.total_shared_count = random.randint(50, 100)
-			# tmp_model_stat_food.total_pay_money = random.randint(1000, 1010)
+			tmp_model_stat_food.total_shared_count = random.randint(50, 100)
+			tmp_model_stat_food.total_pay_money = random.randint(1000, 1010)
+
 			tmp_model_stat_food.updated_time = getCurrentDate()
 			db.session.add(tmp_model_stat_food)
 			db.session.commit()
@@ -174,6 +177,16 @@ class JobTask():
 		tmp_model_stat_site.total_member_count = stat_member_count
 		tmp_model_stat_site.total_order_count = stat_order_count
 		tmp_model_stat_site.total_shared_count = stat_share_count
+
+		'''
+		为了测试效果模拟数据
+		'''
+		tmp_model_stat_site.total_pay_money = random.randint(1000, 1010)
+		tmp_model_stat_site.total_new_member_count = random.randint(50, 100)
+		tmp_model_stat_site.total_member_count += tmp_model_stat_site.total_new_member_count
+		tmp_model_stat_site.total_order_count = random.randint(900, 1000)
+		tmp_model_stat_site.total_shared_count = random.randint(1000, 2000)
+
 		tmp_model_stat_site.updated_time = getCurrentDate()
 		db.session.add(tmp_model_stat_site)
 		db.session.commit()
@@ -186,7 +199,7 @@ class JobTask():
 	def test(self):
 		# 跑30天内的
 		now = datetime.datetime.now()
-		for i in reversed(range(1, 30)):
+		for i in reversed(range(0, 30)):
 			dete_before = now + datetime.timedelta(days=-i)
 			date = getFormatDate(date=dete_before, format="%Y-%m-%d")
 			tmp_params = {

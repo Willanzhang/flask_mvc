@@ -6,7 +6,7 @@ from common.models.member.member import Member
 from application import app, db
 from common.libs.Helper import iPagination, getCurrentDate
 from common.libs.UrlManager import UrlManager
-route_member = Blueprint( 'member_page',__name__ )
+route_member = Blueprint('member_page', __name__ )
 
 @route_member.route( "/index" )
 def index():
