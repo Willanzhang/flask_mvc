@@ -56,9 +56,14 @@
                 <div class="col-lg-12" id="member_order" style="height: 400px;border: 1px solid #e6e6e6;padding-top: 20px;">
                     使用highchart画图
                 </div>
-                <div class="col-lg-12" id="finance" style="height: 400px;border: 1px solid #e6e6e6;padding-top: 20px;">
+                <div class="col-lg-12" id="finance" style="height: 400px;border: 1px solid #e6e6e6;padding-top: 20px;margin-top:40px">
                     使用highchart画图
                 </div>
             </div>
         </div>
+{% endblock %}
+{% block js %}
+<script src="{{buildStaticUrl('/js/chart.js')}}"></script>
+<script src="{{buildStaticUrl('/plugins/highcharts/highcharts.js')}}"></script>
+<script src="{{buildStaticUrl('/js/index/index.js')}}"></script>
 {% endblock %}

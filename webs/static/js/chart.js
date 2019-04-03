@@ -1,5 +1,5 @@
 ;
-//画图通用组件，虽然估计很难统一，但是总要走出第一步了
+//画图通用组件
 var charts_ops = {
     setOption:function(){
         Highcharts.setOptions({
