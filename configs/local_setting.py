@@ -1,5 +1,4 @@
 DEBUG = True
-SERVER_PORT = 9000
 SQLALCHEMY_ECHO = True
 
 SQLALCHEMY_DATABASE_URI = 'mysql://root:123@127.0.0.1/food_db'

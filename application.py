@@ -1,5 +1,5 @@
 import os
-from flask import Flask, jsonify
+from flask import Flask
 from flask_script import Manager
 from flask_sqlalchemy import SQLAlchemy
 from common.libs.UrlManager import UrlManager
