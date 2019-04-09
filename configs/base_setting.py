@@ -2,7 +2,7 @@ SERVER_PORT = 9000
 DEBUG = False
 SQLALCHEMY_ECHO = False
 
-AUTH_COOKIE_NAME="food"
+AUTH_COOKIE_NAME = "food"
 
 # 过滤url
 IGNORE_URLS = [
