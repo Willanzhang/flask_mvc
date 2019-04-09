@@ -119,7 +119,7 @@ def foodInfo():
 	return jsonify(resp)
 
 
-@route_api.route("/food/comments")
+@route_api.route("/food/comments", methods=["GET", 'POST'])
 def foodComments():
 	resp = {'code': 200, 'msg': '操作成功~', 'data': {}}
 	req = request.values

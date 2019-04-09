@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from application import app,manager
-from flask_script import Command,Option
-import argparse,sys,traceback
+from application import app, manager
+from flask_script import Command, Option
+import argparse, sys, traceback
 
 '''
 python manager.py runjob -m Test  (  jobs/tasks/Test.py )
@@ -18,16 +18,18 @@ python manager.py runjob -m test/Index (  jobs/tasks/test/Index.py )
 * metavar - useage中显示的参数的名称.
 * dest - 要添加到解析参数返回的对象中的属性的名称.
 '''
-class runJob( Command ):
 
+
+class runJob(Command):
 	capture_all_args = True
-	def run(self,*args,**kwargs):
+
+	def run(self, *args, **kwargs):
 		args = sys.argv[2:]
-		parser = argparse.ArgumentParser( add_help = True )
-		parser.add_argument("-m","--name",dest = "name",metavar = "name", help="指定job名",required=True)
-		parser.add_argument("-a","--act",dest = "act",metavar = "act", help="Job动作",required=False)
-		parser.add_argument("-p","--param",dest = "param",nargs = "*", metavar = "param",help="业务参数",default = '',required=False)
-		params = parser.parse_args( args )
+		parser = argparse.ArgumentParser(add_help=True)
+		parser.add_argument("-m", "--name", dest="name", metavar="name", help="指定job名", required=True)
+		parser.add_argument("-a", "--act", dest="act", metavar="act", help="Job动作", required=False)
+		parser.add_argument("-p", "--param", dest="param", nargs="*", metavar="param", help="业务参数", default='', required=False)
+		params = parser.parse_args(args)
 
 		# Namespace(act='dad', name='test/Index', param=['hhhh']) 转化为字典形式
 		params_dict = params.__dict__
@@ -35,20 +37,19 @@ class runJob( Command ):
 		print(params_dict)
 		ret_params = {}
 		for item in params_dict.keys():
-			ret_params[ item ] = params_dict[ item ]
+			ret_params[item] = params_dict[item]
 
 		if "name" not in ret_params or not ret_params['name']:
 			return self.tips()
 
-		module_name = ret_params['name'].replace( "/","." )
+		module_name = ret_params['name'].replace("/", ".")
 		try:
-			import_string = "from jobs.tasks.%s import JobTask as  job_target" % ( module_name )
-			exec( import_string , globals() )
+			import_string = "from jobs.tasks.%s import JobTask as  job_target" % (module_name)
+			exec(import_string, globals())
 			target = job_target()
-			target.run( ret_params )
+			target.run(ret_params)
 		except Exception as e:
 			traceback.print_exc()
-
 
 	def tips(self):
 		tip_msg = '''
@@ -56,5 +57,5 @@ class runJob( Command ):
 			python manage runjob -m Test  (  jobs/tasks/Test.py )
 			python manage runjob -m test/Index (  jobs/tasks/test/Index.py )
 		'''
-		app.logger.info( tip_msg )
+		app.logger.info(tip_msg)
 		return False

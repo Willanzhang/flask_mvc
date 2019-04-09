@@ -78,26 +78,19 @@ Page({
     let data = e.detail.userInfo;
     wx.login({
       success(res) {
-        app.console(res)
         if (res.code) {
           // 发起网络请求
           data['code'] = res.code
-          wx.request({
-            url: app.buildUrl('/member/login'),
-            method: "POST",
-            header: app.getRequestHeader(),
-            data: data,
-            success: function(res) {
-              if (res.data.code !== 200) {
-                app.alert({'content': '登录失败，请重新点击~~'})
-                return;
-              } else {
-                wx.setStorageSync({
-                  token: res.data.data.token
-                })
-                app.setCache("token", res.data.data.token)
-                that.goToIndex()
-              }
+          fetch('POST', '/member/login', data).then(resp => {
+            if (resp.data.code !== 200) {
+              app.alert({'content': '登录失败，请重新点击~~'})
+              return;
+            } else {
+              wx.setStorageSync({
+                token: resp.data.data.token
+              })
+              app.setCache("token", resp.data.data.token)
+              that.goToIndex()
             }
           })
         } else {

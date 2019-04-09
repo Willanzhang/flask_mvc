@@ -90,7 +90,7 @@ class WeChatService():
         url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={0}&secret={1}"\
             .format(config_mina['appid'], config_mina['appkey'])
         ret = requests.get(url=url)
-        if ret.status_code !=200 or not ret.text:
+        if ret.status_code != 200 or not ret.text:
             return token
 
         data = json.loads(ret.text)
