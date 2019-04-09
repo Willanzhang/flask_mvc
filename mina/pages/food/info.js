@@ -23,33 +23,15 @@ Page({
         commentCount:2
     },
     onLoad: function (options) {
-        var that = this;
-        this.getInfo(options.id);
-        that.setData({
-            id: options.id,
-            commentList: [
-                {
-                    "score": "好评",
-                    "date": "2017-10-11 10:20:00",
-                    "content": "非常好吃，一直在他们加购买",
-                    "user": {
-                        "avatar_url": "/images/more/logo.png",
-                        "nick": "angellee 🐰 🐒"
-                    }
-                },
-                {
-                    "score": "好评",
-                    "date": "2017-10-11 10:20:00",
-                    "content": "非常好吃，一直在他们加购买",
-                    "user": {
-                        "avatar_url": "/images/more/logo.png",
-                        "nick": "angellee 🐰 🐒"
-                    }
-                }
-            ]
+        this.setData({
+            id: options.id
         });
 
         // WxParse.wxParse('article', 'html', that.data.info.summary, that, 5);
+    },
+    onShow:function(){
+        this.getInfo(this.data.id);
+        this.getComments();
     },
     onShareAppMessage () {
         let params = {
@@ -70,6 +52,22 @@ Page({
                 console.log('轉發失敗')
             }
         }
+    },
+    getComments () {
+        let params = {
+            id: this.data.id
+        }
+        fetch('GET', '/food/comments', params).then(res => {
+            if(res === 200) {
+                this.setData({
+                    commentList: resp.data.list,
+                    commentCount: resp.data.count,
+                })
+            }
+            // app.alert({
+            //     content: res.msg
+            // })
+        })
     },
     goShopCar: function () {
         wx.reLaunch({

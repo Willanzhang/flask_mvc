@@ -1,4 +1,4 @@
-const isDev = false
+const isDev = true
 // 开发环境
 // url: 'https://apidev.66jingcai.cn' + url,
 // 线上
@@ -13,13 +13,13 @@ if(isDev) {
   config = {
     appid: 'wxe3445334e3277c73',
     webView: 'https://h5dev.66jingcai.cn',
-    url: 'http://127.0.0.1:5000/api'
+    url: 'http://127.0.0.1:9000/api'
   }
 } else {
   config = {
     appid: 'wxe3445334e3277c73',
-    webView: 'https://m.66jingcai.cn',
-    url: 'http://127.0.0.1:5000/api'
+    webView: 'https://m.zhangbowen.club',
+    url: 'http://127.0.0.1:9093/api'
   }
 }
 module.exports = config
