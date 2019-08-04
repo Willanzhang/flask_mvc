@@ -3,7 +3,7 @@
 [预览地址](https://m.zhangbowen.club/)
 暂未设置游客账户
 ===============
-##项目说明
+## 项目说明
 -----
 + 使用python flask 项目做的订餐系统
 + 数据mysql 作为数据库 redis 作为简单数据缓存
@@ -14,7 +14,7 @@
 ptyhon的运行环境管理使用 virtualenvwrapper 进行管理
 
 
-##启动
+## 启动
 * Mac: export ops_config=local|production && python manage.py runserver
 * Win: set ops_config=local|production  && python manage.py runserver
 
