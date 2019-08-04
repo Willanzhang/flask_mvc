@@ -17,6 +17,7 @@ ptyhon的运行环境管理使用 virtualenvwrapper 进行管理
 * Win: set ops_config=local|production  && python manage.py runserver
 
 启动脚本
+```
   1 #!/bin/sh
   2 # start flask_mvc
   3 export ops_config=production
@@ -24,6 +25,7 @@ ptyhon的运行环境管理使用 virtualenvwrapper 进行管理
   5 cd /data/www/flask_mvc
   6 workon flask_pri
   7 uwsgi --ini uwsgi.ini
+```
 
 ##
 
